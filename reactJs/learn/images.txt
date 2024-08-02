@@ -1,0 +1,1 @@
+Mostly we put images in src folder because these assets gets optimized but we can also put it in public folder. Putting images had a disadvantage as our assets won't get optimized

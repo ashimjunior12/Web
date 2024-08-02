@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+    <style>
+        .container{
+            width: 90%;
+            height: 100%;
+            margin: 10px auto;
+        }
+        .code{
+            padding: 10px;
+            border: 1px solid black;
+            font-style: italic;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;"><u>Data Types</u></h1>
+        <p class="code">var age = 26; <br>
+            var last-name = "reings"; <br>
+            var cars = ["Saab", "Volvo", "BMW"]; <br>
+            var x = {firstName:"John", lastName:"Doe"};
+        </p>
+        <div>
+            <p>In the above code, age is integer, last-name is a string, cars is an array & x is an object. <br><br><b>JavaScript evaluates expressions from left to right.</b> <br> <br> So, while JavaScript uses the second
+                expression for the data type to work with, if you have multiple sequences, then the results
+                are different.</p>
+        </div>
+        <p class="code">
+            var x = "16" + "Blue"; &emsp; &emsp; &emsp; &emsp; //Output is 16Blue. <br>
+            var x = 16 + 4 + "Blue"; &emsp; &emsp; &emsp;//Output is 20Blue.<br>
+            var x = "Blue" + 16 + 4;&emsp; &emsp; &emsp;//Output is  Blue164.
+        </p>
+        <p>
+            JavaScript has <b>DYNAMIC TYPES</b>, meaning that the same variable can be used more than one type.
+            <p class="code">
+                var x; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;//x is undefined<br>
+                var x = 9; &emsp; &emsp; &emsp; &emsp; //Now x is a number<br>
+                var x = "Ram" &emsp; &emsp; //Now x is a string
+            </p>
+        </p>
+    </div>
+</body>
+</html>

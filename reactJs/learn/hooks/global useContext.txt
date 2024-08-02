@@ -1,0 +1,48 @@
+Certainly! Let's break down the provided code:
+
+1. **Creating a Global Context**:
+```javascript
+import { createContext } from 'react';
+
+const GlobalContext = createContext();
+```
+Here, a global context named `GlobalContext` is created using React's `createContext()` function. This context will be used to share state across components in your React application.
+
+2. **Custom Hook for Accessing Global Context**:
+```javascript
+export const useGlobalContext = () => useContext(GlobalContext);
+```
+A custom hook named `useGlobalContext` is defined, which utilizes the `useContext` hook from React to access the `GlobalContext`. This hook can be used in other components to consume the state stored in the `GlobalContext`.
+
+3. **AppContext Component**:
+```javascript
+const AppContext = ({ children }) => {
+  const [name, setName] = useState('peter');
+  return (
+    <GlobalContext.Provider value={{ name, setName }}>
+      {children}
+    </GlobalContext.Provider>
+  );
+};
+export default AppContext;
+```
+The `AppContext` component is defined here. It's a functional component that takes `children` as a prop. Inside this component, a piece of state `name` is created using the `useState` hook, initialized with the value `'peter'`.
+
+The `AppContext` component wraps its children with the `GlobalContext.Provider`. This provider allows the `GlobalContext` to be consumed by nested components. The value provided to the provider includes `name` state and `setName` function, making them available to any component that consumes the `GlobalContext`.
+
+4. **Rendering the Application**:
+```javascript
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <AppContext>
+      <App />
+    </AppContext>
+  </React.StrictMode>
+);
+```
+In this section, the application is rendered using `ReactDOM.createRoot()`. The `AppContext` component wraps the `<App />` component. This means that the `App` component, along with any of its nested components, will have access to the state provided by the `AppContext`.
+
+By organizing your components in this way, you can share state across your application using the `GlobalContext`, and any component can consume that shared state using the `useGlobalContext` hook.
+
+
+

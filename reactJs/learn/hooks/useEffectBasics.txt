@@ -1,0 +1,45 @@
+- useEffect hook
+
+- Accepts two arguments (second is optional)
+- first argument is a callback function.
+- second argument is dependency array.
+
+- By default, useEffect runs on each render(initial render as well as the re-render)
+
+- Callback function inside the useEffect cannot return promise, so we cannot make async function.
+
+- If dependency array is empty [], useEffect runs only on initial render.
+
+
+---------------------------------------------------------------------------------------------------
+
+
+import { useState, useEffect } from 'react';
+
+const UseEffectBasics = () => {
+  const [value, setValue] = useState(0);
+  const sayHello = () => {
+    console.log('hello there');
+  };
+
+
+  sayHello();
+  useEffect(()=>{
+    console.log('i will be logged only once')
+  },[])
+
+  return (
+    <div>
+      <h1>value : {value}</h1>
+      <button className='btn' onClick={() => setValue(value + 1)}>
+        click me
+      </button>
+    </div>
+  );
+};
+export default UseEffectBasics;
+
+--------------------------------------------------------------------------------------------------------
+
+In above code, sayHello() will be invoked on every render(initial render as well as re-render), however, "i will be logged only once" will be logged only once, since it it inside the useEffect hook and also we are passing an empty dependency as a second argument.
+

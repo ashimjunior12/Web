@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function greet(){
+            return `Hello World!`; //This is a callback function and it will be passed into another function.
+        }
+        function message(callback, name){
+            console.log(`${callback()}, Nice to see you ${name}`); //But inside of it we have to use ().
+        }
+        message(greet, "John");
+
+        // While passing a callback function to a higher order function, we omit the () and only pass(i.e passing the refrence of the function instead of invoking it) the function name.
+
+        // Example of call back function while iterating over an array.
+
+        const names = ["Ram", "Hari", "Shyam", "Sita"];
+        names.forEach(function(name){
+            console.log(name);
+        });
+        // In above example we use anonymous function and pass the name parameter that will print the every elements from the array names.
+
+        
+    </script>
+</body>
+</html>

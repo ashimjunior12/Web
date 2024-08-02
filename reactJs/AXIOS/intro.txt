@@ -1,0 +1,3 @@
+Why to use AXOS??
+
+Even though we can use fetch API in order to make workflow smoother we use http library AXIOS to make data fetching easier. It is not part of react. 

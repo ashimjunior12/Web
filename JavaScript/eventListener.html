@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hello{
+            color: #fff;
+            background-color: blue;
+            width: fit-content;
+            padding: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <p class="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div class="content">Hello world</div>
+    <button class="btn" style="background-color: green; font-size: 20px; outline: none; border: none; color: #fff; padding: 5px; cursor: pointer; margin: 10px;">Click Me</button>
+
+
+    <script>
+        const btn = document.querySelector(".btn");
+        const content = document.querySelector(".content");
+        
+        // .addEventListener() is a higher order function that takes to parameters
+        //  one is event(can be click,toggle) and another is a callback function
+        // inside the callback function we will decide what will happen next, if an event occurs
+
+        // btn.addEventListener("click", function(){
+        //     const newElement = document.createElement("p");
+        //     newElement.textContent = "you just clicked me"
+        //     newElement.classList.add("hello");
+        //     document.body.insertBefore(newElement, btn)
+        //     console.log(newElement)
+        // });
+
+        // instead of writing a callback function inside the .addEventListener, we can pass the refrence of the function
+        // Thing to remember is that, we have to pass the refrence of the function instead of invoking/calling the function
+
+
+        function click(){
+            const hasClassList = content.classList.contains("hello");
+            if(hasClassList){
+                content.classList.remove("hello");
+            }
+            else{
+                content.classList.add("hello");
+            }
+            
+        }
+
+
+        btn.addEventListener("click", click);
+        
+    </script>
+</body>
+</html>

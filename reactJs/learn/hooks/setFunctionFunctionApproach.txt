@@ -1,0 +1,9 @@
+setFunction is not going to be synchronous 
+
+we can update the state using another way and that is the function approach.
+
+in parameter we pass in the state
+
+with this approach we must return something.
+
+if we have some kind of functionality that relies on the latest value, we need this approach

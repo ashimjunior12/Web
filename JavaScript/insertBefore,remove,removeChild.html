@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent">
+        <h1 class="h-primary">Heading one</h1>
+        <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda unde facere rerum id quaerat totam.</p>
+        <li>1</li>
+        <li>2</li>
+    </div>
+
+    <script>
+        const parent = document.querySelector(".parent");
+        const para = document.querySelector(".para");
+        const newElement = document.createElement("h3");
+        newElement.classList.add("h-secondary")
+        newElement.innerText = "Hello World!"
+
+        parent.insertBefore(newElement, para)
+        // .insertBefore inserts new Element whereever we specify the location
+        // first inside the parent element the newElement will be inserted before para
+        // para.remove();
+        // .remove() doesnot take any parameters and removes the selected element
+
+
+        parent.removeChild(para)
+        // It removes the child element from the parent element
+        // As parameter, we supply the element which is to be deleted
+        console.log(newElement)
+    </script>
+</body>
+</html>

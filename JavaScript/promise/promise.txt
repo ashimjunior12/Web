@@ -1,0 +1,47 @@
+Purpose of using promises is to avoid callback hell
+A common practice is to use promises with async/await
+JS promise is an object that returns a value which we hope to recieve in future but not now
+(resturant receipt example)
+
+
+We use a constructor to create a promise.
+Callback function is used where two more arguments are passed.
+
+Eg:-
+const promise = new Promise((resolve,reject)=>{
+	//resolve and reject both are functions themselves.
+	//we pass functions as argument to the callback function.
+	resolve();
+	//since resolve is a function we can invoke it anytime.
+	//same is for reject.
+	reject();
+	
+})
+
+Promise can be in 3 states:- pending, fulfilled, rejected
+
+
+Promises can be consumed by registering functions using .then and .catch methods
+
+1) .then method- It is invoked when promise is either resolverd or rejected.
+It takes two functions as parameters.
+[+] the first function is executed if the promise is resolved and a result is recieved.
+
+Syntax:
+.then(function(result){
+	//handle success
+}, function(error){
+	//handle error
+}) 
+There is a better way to handle error using .catch method.
+
+2) .catch method- It is invoked when a promise is either rejected or some error has occurred.
+[+] it takes one function as parameter.
+
+Syntax:
+.catch(function(error){
+	//handle error
+});
+
+
+

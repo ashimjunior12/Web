@@ -1,0 +1,56 @@
+form Data
+
+we can use form data to handle multiple inputs as well:
+
+how we can achieve this?
+
+SO basically we pass in the event object as an argument.
+
+NOw, we will create a formData using the new constructor: FOr example:-
+
+const formData = new FormData(e.currentTarget)
+
+Now, the form data provides several functions. FOr example we can use the get function and assign the name to access the value in name attribute. For Example:- 
+
+<form>
+	<input type="text" name="name" id="name"/>
+</form>
+
+Now if we:- 
+const formData = new FormData(e.currentTarget)
+console.log(formData.get('name')
+
+then we can grab the value which is in the input tag.
+
+formData returns us an array and inside of the array we have arrays. If we console log the formData
+
+console.log([...formData])
+
+Output:- [Array(2),Array(2),Array(2)]
+
+inside of each array we have 2 elements 1 is name and another is the value .
+
+Now if we want to post this data to the server or do several other task we cannot achieve with array. So, what we can do is convert this array to the object using Object.fromEntries(formData).
+
+console.log(Object.fromEntries(formData))
+
+If i do this then the output is in object form:- 
+
+{
+	name:'',
+}
+
+
+Now we can post this object on the server or do several other cool stuffs.
+
+After doing this our stuff is to clean the input fields, So first we will create a state value that basically counts how many times our form is submitted.
+
+const [count,setCount] = useState(0)
+
+
+console.log(Object.fromEntries(formData))
+
+setCount(count+1);
+e.currentTarget.reset();
+
+Now, our input fields are clear, we can post the next data.

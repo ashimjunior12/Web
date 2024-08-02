@@ -1,0 +1,9 @@
+General Rules of Hooks in react:-
+
+- Hooks start with the word "use" (both -react and custom hook).
+- Hooks should be invoked inside the function/component body.
+- Components must be uppercase.
+- We cannot use hooks inside conditions(if else blocks).
+- set functions don't update state immediately.
+
+

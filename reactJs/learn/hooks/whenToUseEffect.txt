@@ -1,0 +1,59 @@
+import { useState } from 'react';
+
+const CodeExample = () => {
+  const [value, setValue] = useState(0);
+
+  const newFunc = () =>{
+    console.log('hello world');
+  }
+
+  newFunc()
+
+  return (
+    <div>
+      <h1>value : {value}</h1>
+      <button className='btn' onClick={() => setValue(value + 1)}>
+        click me
+      </button>
+    </div>
+  );
+};
+export default CodeExample;
+
+
+
+
+------------------------------------------------------------------------------- Use of Effect Hook --------------------------------------------------------------------------------------------------------------
+
+In above code the newFunc triggers initial render as well as every re-render(i.e whenever our application loads(components mounts) the function prints out hello world in the console as well as whenever our function performs some task(re-rendering occurs), then we can see the hello world in our console). This might not be an issue but imagine a scenario where we are updating the state inside a function and we are invoking the function inside of a component. In such case, we are inside of an infinite loop and our program crashes cause every time we are updating the state.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+import { useState } from 'react';
+
+const CodeExample = () => {
+  const [value, setValue] = useState(0);
+
+  const newFunc = () =>{
+    setValue(value+1);
+  }
+
+  newFunc()
+
+  return (
+    <div>
+      <h1>value : {value}</h1>
+      <button className='btn' onClick={() => setValue(value + 1)}>
+        click me
+      </button>
+    </div>
+  );
+};
+export default CodeExample;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+In above code we are updating the state inside of the newFunc and invoking the function(i.e we are triggering the re-render). This takes us to an infinite loop and our program crashes. In such similar scenarios we use Effect hooks.

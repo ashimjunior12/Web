@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, commodi.</p>
+    <h3 class="sec-heading">This is heading 3</h3>
+    <script>
+        const newElement = document.createElement("h1")
+        newElement.innerText = "This is inserted using JS"
+        //  We can insert text nodes using .innerText property as well
+        document.body.prepend(newElement);
+        // prepend adds the element at the top of the selected element
+        console.log(newElement)
+    </script>
+</body>
+</html>

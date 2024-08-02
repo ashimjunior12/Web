@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <style>
+        body {
+            width: 85%;
+            margin: 0 auto;
+        }
+
+        * {
+            font-size: 17px;
+        }
+
+        h1 {
+            text-decoration: underline;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .code {
+            width: fit-content;
+            font-style: italic;
+            border: 1px solid black;
+            padding: 8px;
+            font-size: 15px;
+            color: white;
+            background-color: rgb(21, 32, 43);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Arrays
+    </h1>
+    Array is an object that can hold multiple data at once. <br> Data inside an array can be integer, string, object,
+    functions.
+    <br>
+    Arrays are mutable datatypes meaning their datas can be altered or changed.
+    <ul>
+        <li>
+            <b>Creation of array</b>
+            <ol>
+                <li>
+                    <b>Using array literal([])</b> <br> <br>
+                    Syntax: <br>
+                    <p class="code">
+                        const array_name = [item1, item2, item3, ...., itemn]; <br>
+                        //It is a common practice to declare arrays with the const keyword.
+                    </p>
+                    Example:-
+                    <p class="code">
+                        const names = ["Ram", "hari", 1, "shyam"];
+                    </p>
+                    We can first declare array and then assign items to it. <br>Example:-
+                    <p class="code">
+                        const cars = []; <br>
+                        cars[0] = "BMW"; <br>
+                        cars[1] = "audi"; <br>
+                        cars[2] = "toyota" <br>
+                        console.log(cars); <br><br>
+                        Output:- ["BMW", "audi", "toyota"]
+                    </p>
+                </li>
+                <li>
+                    <b>Using array constructor <em>new Array()</em></b> <br><br>
+                    Syntax:-
+                    <p class="code">
+                        const array_name = new Array(item1, item2, item3, ..., itemn);
+                    </p>
+                    Example:-
+                    <p class="code">
+                        const names = new Array("ram", "shyam", "hari"); <br>
+                        console.log(names); <br><br>
+                        Output:- ["ram", "shyam", "hari"]
+                    </p>
+                </li>
+            </ol>
+            For simplicity, readability and execution speed, we use the array literal method.
+        </li>
+        <br>
+        <li>
+            <b>Accessing Arrays</b>:- <br>
+            We can access datas from arrays using index. Indexing starts from 0. <br>
+            <p class="code">
+                const names = ["Ram", "Shyam", "Hari"];
+            </p>
+            If I want to get the first data from "names" array then:-
+            <p class="code">
+                console.log(names[0]); &emsp;&emsp;&emsp;//Ram
+            </p>
+        </li>
+        <br>
+        <li>
+            <b>Changing array element</b> <br>
+            We can use array index to change elements inside of it.
+            <p class="code">
+                const names = ["Ram", "shyam", "hari"]; <br>
+                names[0] = "sita"; <br>
+                console.log(names); <br><br>
+                Output:- ["sita", "shyam", "hari"] &emsp;&emsp;//The first element is changed to "sita".
+            </p>
+        </li>
+        <li>
+            <b>
+                Changing Last Element Of Array Using <em>pop() & push()</em> methods:-
+            </b> <br>
+            We can use <em>pop()</em> method to delete the last element from an array.
+            <p class="code">
+                const names = ["ram", "shyam", "hari"]; <br>
+                names.pop();
+                <br><br>
+                Output:- ["ram", "shyam"]; &emsp;&emsp;//The last element gets deleted
+            </p>
+            We can use <em>push()</em> method to add element at the last of an array.
+            <p class="code">
+                const names = ["ram", "shyam", "hari"]; <br>
+                names.push("sita"); <br>
+                console.log(names); <br><br>
+                Output:- ["ram", "shyam", "hari", "sita"] &emsp;&emsp;&emsp;//"sita" is added at the last
+
+            </p>
+        </li>
+        <li>
+            <b> Changing First Element Of array using <em>shift() & unshift() </em> method. </b> <br>
+            We can use <em>shift()</em> method to delete first element of an array.
+            <p class="code">
+                const names = ["ram", "shyam", "hari"]; <br>
+                names.shift(); <br>
+                console.log(names); <br><br>
+                Output:- ["shyam", "hari"] &emsp;&emsp;&emsp;//"ram" is deleted
+            </p>
+            We can use <em>unshift()</em> method to add element at the beginning of an array.
+            <p class="code">
+                const names = ["ram", "shyam", "hari"]; <br>
+                names.unshift("sita"); <br>
+                console.log(names); <br><br>
+                Output:- ["sita", "ram", "shyam", "hari"] &emsp;&emsp;&emsp;//"sita is added at index 0"
+            </p>
+        </li>
+        <li>
+            <b>Array's method</b>:- <br>
+            .length :- .length is used to find out the total no of elements in array. <br>
+            .sort:- .sort() method is used to sort array in ascending order.
+            <ul>
+                <br>
+                <li style="list-style: square;">
+                    <em>Arranging array in descending order using .sort() and .reverse() method.</em>
+                    <p class="code">
+                        const numbers = [12, 19, 14,10, 3, 2]; <br>
+                        console.log(numbers.sort().reverse()); <br><br>
+                        // The numbers are first sorted and then reversed which will give the output in descending order.
+                    </p>
+                </li>
+            </ul>
+            <br><br>Array elements can be deleted using the JavaScript operator delete.
+
+            Using delete leaves undefined holes in the array.
+
+            Use pop() or shift() instead.
+            <br>
+            Example:-
+            <p class="code">
+                let names = ["ram", "shyam"]; <br>
+                delete names[0];
+            </p>
+        </li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+Custom Hooks:-
+
+Rules are same whatever hooks we create.
+
+=======================================================================================================
+
+Why to create our own hook??
+
+Let's say we have a bigger application and it has a fetching the data of a user functionality. Let's say we have another similar fetching functionality in our application. In this case what we can do is create our own hook and use that hook where-ever we want to fectch data(in above case, we can use it on both the cases). Not only in fetching but in other cases as well, it saves our time facilitating the re-use functionality.
+
+=======================================================================================================
+
+
+
+

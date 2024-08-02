@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            font-size: 25px;
+        }
+        *{
+            font-size: 18px;
+        }
+        .code{
+            border: 1px solid black;
+            width: fit-content;
+            font-style: italic;
+            padding: 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>If else and Switch</h1>
+    If else Syntax
+    <p class="code">
+        if(condition){ <br>
+        &emsp;&emsp;&emsp;//Block of code if condition is true <br>
+        } <br>
+        else{
+            <br>&emsp;&emsp;&emsp;//Block of code if condition is false. <br>
+        }
+    </p>
+    <b>Example
+    </b>
+    <p class="code">
+        let age = 18; <br>
+        if (age >= 18){
+            <br>&emsp;&emsp;&emsp;console.log("You are eligible to vote") &emsp;&emsp;//This gets printed <br>
+        else{ <br>
+            &emsp;&emsp;&emsp;console.log("Sorry you cannot vote.") <br>
+            &emsp;&emsp;} <br>
+        }
+    </p>
+    Switch case Syntax
+    <p class="code">
+        switch(condition){ <br>
+            &emsp;&emsp;case identifier1: <br>
+            &emsp;&emsp;//block of code <br>
+            &emsp;&emsp;break;<br><br>
+            &emsp;&emsp;case identifier2: <br>
+            &emsp;&emsp;//block of code <br>
+            &emsp;&emsp;break; <br><br>
+            default: <br>
+            &emsp;&emsp;//block of code <br>
+            &emsp;&emsp;break;
+
+        <br> }
+    </p>
+    <b>Example</b>
+    <p class="code">
+        let age = 12; <br>
+        switch(age){ <br>
+            &emsp;&emsp; case 18: <br>
+            &emsp;&emsp;    console.log("you can vote");
+            <br>&emsp;&emsp;break;
+            <br><br>
+            &emsp;&emsp;case 12: <br>
+            &emsp;&emsp;console.log("you cannot vote"); &emsp;&emsp;//this is printed
+            <br>&emsp;&emsp;break;
+            <br><br>
+            &emsp;&emsp;default: <br>
+            &emsp;&emsp;console.log("some error occured");
+            <br>&emsp;&emsp;break;
+           
+        <br> }
+    </p>
+    <h1>Difference between if else and switch case</h1>
+    If else is used to evaluate character, integers, pointer, floating-point type and boolean type. <br>
+    While switch is used to evaluate character expressions and integer. <br><br>
+    If else tests for both logical expressions and equality. <br>
+    While switch tests for equality. <br><br>
+    Switch statements are faster in compare to if-else statements.
+    
+    <br><br><br>
+    <b>Let's observe a difference between "==" and "===":</b>
+    <br><br>
+    "==" operator performs type coercion <b><em> (automatic conversion from one data type to another)</em></b> and converts string to number before comparing. <br>
+    "=== <em>(strict equality operator)</em> " operator doesn't perform type coercion and directly compares number with a string. <br><br>
+    <p class="code">
+        let age = "18"; &emsp;&emsp;//string
+        <br>if (age == 18){ &emsp;&emsp;//Comparing with integer
+         <br>&emsp;&emsp;&emsp;console.log("you can vote"); <br>
+
+        } <br>
+        else{
+            <br>&emsp;&emsp;&emsp;console.log("You cannot vote"); <br>
+        }
+    </p>
+    In above case, the output is "you can vote". The reason behind it is (==) operator only checks for the value ignoring the type of data it is comparing. <br>
+     <br>Now let's observe this.
+        <p class="code">
+            let age = "18"; &emsp;&emsp;//string
+            <br>if (age === 18){ &emsp;&emsp;//Comparing with integer
+             <br>&emsp;&emsp;&emsp;console.log("you can vote"); <br>
+    
+            } <br>
+            else{
+                <br>&emsp;&emsp;&emsp;console.log("You cannot vote"); <br>
+            }
+    </p>
+    Unlike (==) operator (===) checks both the data type as well as the value compared.
+    <br><br>Since we are comparing integer with string, the condition is skipped to else block and the output is "you cannot vote".
+</body>
+
+</html>

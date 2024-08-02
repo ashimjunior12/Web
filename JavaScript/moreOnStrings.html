@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on strings</title>
+    <style>
+        body{
+            width: 90%;
+            margin: 0 auto;
+        }
+        .code{
+            width: fit-content;
+            border: 1px solid black;
+            background-color: rgba(255, 238, 216, 0.6);
+            padding: 10px;
+            font-style: italic;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1>String Functions</h1>
+    <ol>
+        <li>
+            indexOf(); :- <br> Indexing strats from 0. <br>indexOf() function gives us the index of the substring. (First Occurence).
+            <p class="code">
+                var name = "Ram is a good boy and is tall"; <br>
+                console.log(name.indexOf("is")); <br><br>
+                Output:- 4 &emsp;&emsp; //First occurence of "is" is at 4.
+            </p>
+        </li>
+
+        <li>
+            lastIndexOf(); <br>lastIndexOf() gives the index of the string at last occurence.       
+            <p class="code">
+                console.log(name.lastIndexOf("is"));
+                <br><br>
+                Output:- 22 &emsp;&emsp;&emsp;// Last occurence of "is" is at no 22.
+            </p>
+        </li>
+        <li>
+            .slice(starting_point, ending_point);<br>
+            .slice() method is used to slice a string.
+            <p class="code">
+                console.log(name.slice(0, 3)); <br><br>
+                Output:- Ram <br> <br><span style="background-color: black; color: white; padding: 4px;">(In above case, 0 is included but 3 is excluded).</span>
+            </p>
+            .slice() takes negative values as well. <br><br>
+        </li>
+        <li>
+            .substr(); <br> Similar to the .slice() method, .substr() method is used to slice string. <br> .substr() doesn't take negative value.
+            <p class="code">
+                console.log(name.substr(0,3)); <br><br>
+                Output:- Ram
+            </p>
+        </li>
+        <li>
+            .replace("to_be_replaced", "replaced_value"); <br>
+            .replace() method is used to replace a substring with new value.
+            <p class="code">
+                console.log(name.replace("Ram", "Hari")); <br><br>
+                Output:- Hari is a good boy and is tall.
+            </p>
+            <p>Since strings are immutable data type, meaning the initial value of "name" is not affected by the replaced value. If we print out the name, we get the initial value of name.</p>
+            <p class="code">
+                console.log(name); <br><br>
+                Output:- Ram is a good boy and is tall.
+            </p>
+        </li>
+        <li>
+            .toUpperCase();<br>
+            As the name suggests, .toUppercase() method is used to convert a string to its uppercased format.
+            <p class="code">
+                console.log(name.toUpperCase()); <br><br>
+                Output:- RAM IS A GOOD BOY AND IS TALL.
+            </p>
+        </li>
+        <li>
+            .toLowerCase(); <br>
+            Similar to .toUpperCase(); method, .toLowerCase() method is used to convert a string to its lowercased format.
+            <p class="code">
+                console.log(name.toLowerCase());
+                <br><br>
+                Output:- ram is a good boy and is tall.
+            </p>
+        </li>
+        <li>
+            .trim(); <br>
+            .trim() method is used to remove whitespaces from the beginning and the end of a string.
+            <p class="code">
+                var spaces = "&emsp;&emsp;Hello &emsp;&emsp;World&emsp;&emsp;!&emsp;&emsp;"
+                <br>
+                console.log(spaces.trim()); <br><br>
+                Output:- Hello&emsp;&emsp;World&emsp;&emsp;! <br>
+                <br>//The space is removed from start and end only, <br> not in middle part of the string.
+            </p>
+        </li>
+
+        <li>
+            .charAt(index); <br>
+            .charAt() method gives a character at the index assigned to it. 
+            <p class="code">
+                console.log(name.charAt(1));
+                <br><br>
+                Output:- a
+            </p>
+        </li>
+        <li>
+            [index]; <br>
+            variable name followed by [] with index inside of it gives the character at that index.
+            <p class="code">
+                console.log(name[1]);
+                <br><br>
+                Output:- a
+            </p>
+            <p>In this case, we cannot use negetive index. <br><br><br><br></p>
+        </li>
+    </ol>
+
+
+
+    <script>
+        var name = "Ram is a good boy and is smart";
+        namePosition = name.indexOf('is');
+        console.log(namePosition);
+
+        nameLastIndex = name.lastIndexOf('is');
+        console.log(nameLastIndex);
+
+        nameSlice = name.slice(1,7);
+        console.log(nameSlice);
+
+        console.log(name.slice(-7,-1));
+
+        console.log(name.substr(1,5));
+        
+        console.log(name.replace("Ram", "Hari"));
+        console.log(name);
+
+        uppercasedName = name.toUpperCase();
+        console.log(uppercasedName);
+
+        console.log(uppercasedName.toLowerCase());
+
+        var string = "     Hello      World       !            ";
+        console.log(string);
+        console.log(string.trim());;
+
+
+        console.log(name.charAt(5));
+        console.log(name.charCodeAt(2));
+
+        console.log(name[7]);
+
+    </script>
+</body>
+</html>

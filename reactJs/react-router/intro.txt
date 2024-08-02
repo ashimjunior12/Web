@@ -1,0 +1,7 @@
+Traditional web applications follow a model where navigating to another page typically involves a full page refresh, which means the entire HTML content of the new page is fetched from the server and replaces the current page in the browser window. This results in a noticeable delay and can sometimes lead to a less fluid user experience, especially for complex applications.
+
+React, however, is a JavaScript library for building user interfaces that operates on a single-page application (SPA) model. In an SPA, the initial HTML, CSS, and JavaScript for the entire application are loaded once, typically when the user first visits the site. Subsequent interactions with the application, such as navigating to different views or pages, are handled by JavaScript without requiring a full page reload.
+
+Instead of fetching entire new pages from the server, React updates only the portions of the DOM (Document Object Model) that need to change based on user interactions. This approach can lead to a smoother and more responsive user experience, as only the necessary data is fetched from the server and only the relevant portions of the UI are updated.
+
+React achieves this through its virtual DOM (Document Object Model) mechanism, which is an in-memory representation of the actual DOM. React components define how the UI should look at any given moment, and React efficiently updates the virtual DOM and then reconciles it with the actual DOM to minimize the number of changes needed.

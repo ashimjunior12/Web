@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+    <style>
+        body {
+            width: 90%;
+            margin: 0 auto;
+            font-size: 18px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .code {
+            width: 100%;
+            background-color: black;
+            color: white;
+            font-style: italic;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: 25px;
+            text-decoration: underline;
+            text-align: center;
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        th {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Loops in JavaScript</h1>
+    Loops are used to repeat a block of code.
+    <ol>
+        <li> <b>For Loop:-</b>
+            <br> <em>Syntax of for loop:-</em>
+            <br>
+            <p class="code">
+                for (initialization;condition;increment/decrement){ <br>
+                &emsp;&emsp;&emsp;//block of code <br>
+                }
+            </p>
+            Example of for loop to display numbers:-
+            <p class="code">
+                for(let i=0; i&lt;5; i++){ <br>
+                &emsp;&emsp;&emsp;console.log(i);
+                <br> }
+            </p>
+            In above code, we first initialized the value of i which is equal to 0. After that we set the condition in
+            which we specify that "i" should be less than 5. And after, the value of "i" is increased after each
+            iteration until the condition is met.
+            <br>
+            The output is as:-
+            <p class="code">
+                <b>Output:- </b> <br>
+                0 <br>
+                1 <br>
+                2 <br>
+                3 <br>
+                4
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Iteration</th>
+                        <th>Variable</th>
+                        <th>Condition</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1st</td>
+                        <td>i=0</td>
+                        <td>true</td>
+                        <td>0 is printed <br> i becomes 1</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td>i=1</td>
+                        <td>true</td>
+                        <td>1 is printed <br> i becomes 2 </td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td>i=2</td>
+                        <td>true</td>
+                        <td>2 is printed <br> i becomes 3 </td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td>i=3</td>
+                        <td>true</td>
+                        <td>3 is printed <br> i becomes 4 </td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td>i=4</td>
+                        <td>true</td>
+                        <td>4 is printed <br> i becomes 5 </td>
+                    </tr>
+                    <tr>
+                        <td>6th</td>
+                        <td>i=5</td>
+                        <td>false</td>
+                        <td>loop is terminated </td>
+                    </tr>
+
+                </tbody>
+            </table> <br><br>
+            <b>Printing sum of 5 natural numbers using for loop:-</b>
+            <p class="code">
+                let sum = 0;
+                <br> for(let i=1; i&lt;=5; i++){ <br>
+                &emsp;&emsp;&emsp;&emsp;sum += i;
+                <br> } <br>
+                console.log(`Sum: ${sum}`); <br><br>
+                <b>Output:- <br> </b> Sum: 15
+            </p>
+
+        </li> <br><br>
+        <li>
+            <b>While loop:- </b> <br>
+            Syntax:- <br>
+            <p class="code">
+                while(condition){ <br>
+                &emsp;&emsp;&emsp;//block of code <br>
+                &emsp;&emsp;&emsp;//increment/decrement
+                <br> }
+            </p>
+            Example of while loop to display numbers:- <br>
+            <p class="code">
+                let i=0; &emsp;&emsp;&emsp;&emsp;&emsp;//Initializing the value of i
+                <br>
+                while(i&lt;5){ <br>
+                &emsp;&emsp;&emsp;console.log(i); <br>
+                &emsp;&emsp;&emsp;i++; &emsp;&emsp;&emsp;&emsp;//increasing the value of i
+                <br>
+                } <br><br>
+                <b>Output:- </b> <br>
+                0 <br>
+                1 <br>
+                2 <br>
+                3 <br>
+                4
+            </p>
+        </li>
+        <br><br>
+        <li>
+            <b>Do-While loop</b>
+            <br>
+            Do-While loop executes a block of code for at least one time even if the condition is false.
+            <br><br> Syntax:-
+            <p class="code">
+                do{ <br>
+                &emsp;&emsp;&emsp;//block of code
+                <br> } <br>
+                while(condition);
+            </p>
+            <br>Example of do while loop to display 5 numbers:-
+            <p class="code">
+                let i = 0; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//Initializing
+                <br>
+                do{ <br>
+                &emsp;&emsp;&emsp;console.log(i);
+                <br>
+                &emsp;&emsp;&emsp;i++; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//Incrementing value of i
+                <br> } <br>
+                while(i&lt;5); &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//condition checking <br><br><br>
+                <b>Output:- </b> <br>
+                0 <br>
+                1 <br>
+                2 <br>
+                3 <br>
+                4
+            </p>
+        </li>
+        <br>
+        <li>
+            <b>For-of Loop:-</b> <br>
+            for-of loop is used to iterate over iterable objects such as arrays, strings, sets and maps.
+            <br><br>
+            <b><em>Example of looping an array using for loop</em></b>
+            <p class="code">
+                let names = ["Ram", "Shyam", "Hari", 12, "Sita"];
+                <br>
+                for (let i=0; i&lt;names.length; i++){ <br>
+                &emsp;&emsp;&emsp;&emsp;console.log(names[i]);
+                <br> }
+            </p>
+            The for-of loop becomes handy when iterating over iterable objects because it simplifies the iteration
+            process.
+            <br><br>
+            <b><em>Example of looping an array using for-of loop</em></b>
+            <p class="code">
+                let names = ["Ram", "Shyam", "Hari", 12, "Sita"]; <br>
+                for(name of names){ <br>
+                &emsp;&emsp;&emsp; console.log(name);
+                <br> }
+            </p>
+            In both cases output is:-
+            <p class="code">
+                <b>Output:-</b> <br> <br>
+                Ram <br>
+                Shyam <br>
+                Hari <br>
+                12 <br>
+                Sita
+
+
+            </p>
+        </li>
+        <li>
+            <b>For-in loop</b>:- <br>
+            for-in loop is used to iterate over properties of an object.
+            <br><br>
+            <b><em>Example:-</em></b>
+            <p class="code">
+                let employee = { <br>
+                &emsp;&emsp;&emsp;name: "Ram", <br>
+                &emsp;&emsp;&emsp;salary: 200000, <br>
+                &emsp;&emsp;&emsp;address: "kathmandu",<br>
+                &emsp;&emsp;&emsp;age: 26
+                <br> }; <br>
+                for (keys in employee){ <br>
+                &emsp;&emsp;&emsp;console.log(keys + ": " + employee[keys]);
+                <br> } <br><br><br>
+                <b>Output:- </b> <br>
+                name: Ram <br>
+                salary: 200000 <br>
+                address: kathmandu <br>
+                age: 26
+            </p>
+            In above case "keys" is simply a variable. When we do employee[keys], consecutive key in stored in the "keys" variable and output is displayed.
+            <ul> <br>
+                <li style="list-style: square;">
+                    <b>Using for-in loop in array.</b>
+                </li>
+                <p class="code">
+                    let names = ["Ram", "Shyam", "Hari", 12, "Sita"]; <br>
+                    for(name in names){ <br>
+                    &emsp;&emsp;&emsp; console.log(name);
+                    <br> } <br><br><br>
+                    <b>Output:- </b> <br>
+                    0 <br>
+                    1 <br>
+                    2 <br>
+                    3 <br>
+                    4
+                </p>
+            </ul>
+            This is because behind the scenes, a JavaScript array is just an object where each element is associated with a key (the index of the element).
+
+Similar to the for…in loop on a JavaScript object, when called on an array, the for…in loop grabs these “invisible” keys (indexes) instead of the array values. This is why you should not use a for…in loop to iterate over arrays. It simply doesn’t work the way you’d expect.
+        </li>
+    </ol>
+</body>
+
+</html>

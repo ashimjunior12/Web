@@ -1,0 +1,85 @@
+First thing to do is import useReducer.
+
+import {useReducer} from 'react';
+
+With useReducer we need to pass two things, one is the default state and the other is the reducer(a function that is going to manipulate the state).
+
+defaultState can be anything, but mostly we use **Objects**.
+We can have multiple things in there.
+
+const defaultState = {
+	people: SOME_DATA,
+	isLodaing:false,
+}
+
+const reducer = () =>{
+	
+}
+
+
+
+useReducer(reducer,defaultState);
+
+With useReducer we get state and dispatch.
+
+const [state,dispatch] = useReducer(reducer,defaultState);
+
+state will hold the defaultState and dispatch will update the state. 
+
+With disptach we need to pass the action.
+
+
+=====================================================================================================
+
+
+While working with useReducer we dispatch action and the action is going to be handled in the reducer. And whatever gets return from the reducer will be the new state. reducer function takes two parameters:- one is the state, and another is the action.
+
+const reducer = (state,action) =>{
+	if(action.type === 'CLEAR_LIST"){
+		return {...state, people:[]}
+	}
+	return state;                // default value;
+}
+
+Let's say we have the clearList function.
+
+const clearList = () =>{
+	dispatch({type:'CLEAR_LIST'})
+}
+
+A convetion is to write the string all in the uppercase in type property. Now reducer will handle on the basis of action.
+
+Quite often we will see the switch operator in the reducer function, since if-else is more redable we will use the if-else statements.
+
+
+Since the state can hold the multiple values we will spread it using the spread operator so that the enitre state doesn't become empty.
+
+
+======================================================================================================
+
+Conventions:- 
+
+Actions:-
+
+Actions can be any string we want. In order to avoid some typos, a convention is to set them in a variable.
+
+
+const CLEAR_LIST = 'CLEAR_LIST'
+const RESET_LIST = 'RESET_LIST'
+
+Now instead of passing the string we can pass the varibale. To handle some bugs we may encounter, we can throw the error right away.
+
+
+const reducer = (state,action) =>{
+	if(action.type === 'CLEAR_LIST"){
+		return {...state, people:[]}
+	}
+	return state;                // default value;
+	
+	throw new Error(`No matching "${action.type}-action"`);
+}
+
+
+
+
+

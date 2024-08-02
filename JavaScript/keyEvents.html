@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+
+    <script>
+
+        // keypress :- when key is pressed
+        // keydown :- when key is down
+        // keyup :- when key is released
+
+
+
+        // const input = document.getElementById("input");
+        // input.addEventListener("keypress", function(){
+        //     console.log("You just pressed a key")
+        // })
+
+        // input.addEventListener("keydown", () => console.log("you have not released the key"))
+        
+        
+        // DOMContentLoaded is an event listener that fires up, once the DOM is completely loaded
+
+
+        input.addEventListener("keyup", () => console.log(input.value))
+
+        
+    </script>
+</body>
+</html>

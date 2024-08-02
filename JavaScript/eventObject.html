@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blue{
+            background-color: blue;
+            color: white;
+        }
+        .anchor{
+            display: inline-block;
+            margin-top: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">click me</button>
+    <h3 class="heading">Some heading</h3>
+    <a href="#" class="anchor">Random link</a>
+
+    <script>
+        const btn = document.querySelector(".btn");
+        const h3 = document.querySelector(".heading")
+        const anchor = document.querySelector(".anchor")
+
+
+
+        // we can pass an argument in the callback fucntion to get the specific element where event is occured
+        // In this case we will get h3 element, whenever we clicked h3 
+        h3.addEventListener("click", function(event){
+            event.currentTarget.classList.add("blue")
+            console.log(event.type);
+            // returns what event has occured, (in this case click)
+
+        })
+        anchor.addEventListener("click", function(event){
+            event.preventDefault();
+            // We can use .preventDefault() "method" to prevent from scrolling(Default Behavior)
+        })
+
+
+    </script>
+</body>
+</html>

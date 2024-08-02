@@ -1,0 +1,46 @@
+In JavaScript, a value is considered "truthy" if it is evaluated to true when used in a boolean context. A value is considered "falsy" if it is evaluated to false when used in a boolean context.
+
+Here is a list of values that are considered falsy in JavaScript:
+
+false
+0 (zero)
+"" (empty string)
+null
+undefined
+NaN (Not a Number)
+All other values, including objects and arrays, are considered truthy.
+
+
+
+
+
+
+
+
+
+Need of short circuit operators(&&, ||)
+
+Since we cannot use conditional statements in jsx(if-else), we use short circuit operators to render components conditionally.
+
+
+
+======================================================================================================
+
+const ShortCircuitOverview = () => {
+
+  const [text, setText] = useState('');
+  const [name,setName] = useState('susan');
+
+  return (
+    <>
+      <h4>Falsy OR: {text || 'hello world'}</h4>                // hello world
+      <h4>Falsy AND: {text && 'hello world'}</h4>		// 												
+      <h4>Truthy OR: {name || 'hello world'}</h4>		// Susan
+      <h4>Truthy AND: {name && 'hello world'}</h4>		// hello world
+    </>
+  );
+};
+
+======================================================================================================
+
+

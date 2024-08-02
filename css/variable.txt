@@ -1,0 +1,14 @@
+:root{
+	--color: red;
+}
+
+:root (It's like a global scope and can be accessed from anywhere.)
+
+To access the color, the syntax is like:-
+
+body (can be anything) {
+	color: var(--color);
+}
+
+
+In above context, --color (color) is a variable name. var is used to access the color.

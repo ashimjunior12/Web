@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            background-color: red;
+            color: white;
+            width: fit-content;
+            font-weight: 600;
+            padding: 5px;
+            font-size: 25px;
+        }
+        .colors{
+            background-color: blue;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            width: fit-content;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">This is a content</div>
+    <div class="main-content">This is main content</div>
+    <h1 class="heading">This is a heading</h1>
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, beatae.</p>
+    <script>
+        const newElement = document.createElement("h4");
+        const text = document.createTextNode("this is text from js");
+        const heading = document.querySelector(".heading")
+        newElement.appendChild(text);
+        newElement.classList.add("colors", "from-js");
+        document.body.replaceChild(newElement, heading)
+        console.log(newElement)
+    </script>
+</body>
+</html>

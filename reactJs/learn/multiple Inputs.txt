@@ -1,0 +1,29 @@
+Handling multiple inputs:- 
+
+We can create as many state values to handle the inputs but when we have, let's say many inputs, this task may become tedious. So, we can create a single state and update it every time the user submits the form. HOW we can do that?
+
+const [user,setUser] = useState({
+	name:'',
+	password:'',
+})
+
+
+const handleSubmit = (e) =>{
+	e.preventDefault();
+}
+
+const handleChange = (e) =>{	
+	setUser({...user, [e.target.name]:[e.target.value]}) // dynamic object keys
+}
+
+
+<form onSubmit={handleSubmit}>
+	<label htmlFor='name'> Name </label>
+	<input id='name' name='name' onChange={handleChange}/>
+	
+	<label htmlFor='name'> password </label>
+	<input id='password' name='password' onChange={handleChange}/>
+</form>
+
+
+

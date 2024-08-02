@@ -1,0 +1,12 @@
+awaits waits until the promise is settled.
+we can use await until async is present infront of the function.
+async function always returns a promise.
+
+
+const example = async () => {
+	return ' hello there '
+}
+
+console.log(example()) 		//Promise {}
+
+

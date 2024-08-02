@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      width: 90%;
+      margin: 0 auto;
+      padding: 10px;
+
+    }
+    *{
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .code{
+      background-color: black;
+      color: white;
+      padding: 10px;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 15px;
+    }
+    h1{
+      text-align: center;
+      text-decoration: underline;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Scheduling</h1>
+  If we want our function to execute after a period of time, then we may schedule the calling of function
+  <br>There are two methods of doing it.
+  <ul>
+    <li>setTimeout:- allows us to run a function after specified time and the function is executed only once</li> <br>
+    <li>setInterval:- allows us to run a function after specified time and the function is executed continuously</li>
+
+    <br><br><br>
+    setTimeout:- <br>
+    Syntax:- 
+    <p class="code">
+      setTimeout(func|code, [delay], [arg1], [arg2], ....);
+
+    </p>
+    func:- It takes refrence of function. If in case we call the function, then it throws an error. So, we have to pass the refrence of function. <br>
+    <br>
+    delay:- delay is measured in milliseconds. i.e. 1000 = 1sec <br> <br>
+    argument:- arguments are sent to the function.
+    <p class="code">
+      function greet(user, greeting){ <br>
+        &emsp;&emsp;&emsp;console.log(`Hello ${user}, ${greeting}`); &emsp;&emsp;//Hello Hari, Good Morning is printed after 5 seconds
+      <br> } <br>
+      setTimeout(greet, 5000, "Hari", "Good Morning");
+    </p>
+    setTimeout is commonly used for displaying notifications after certain interval of time.
+    <br><br> <br>
+    setInterval:- <br>
+    syntax is similar to setTimeout. But this function is used to execute a function in a regular interval of time. It is commonly used while making animations, updating contents.
+    <p class="code">
+      function greet(user, greeting){ <br>
+        &emsp;&emsp;&emsp;console.log(`Hello ${user}, ${greeting}`); &emsp;&emsp;//Hello Hari, Good Morning is printed after every 5 seconds
+      <br> } <br>
+      setInterval(greet, 5000, "Hari", "Good Morning");
+    </p>
+  </ul> <br><br>
+  <span style="font-weight: 550;">  setInterval fucntion returns us an interval id which we can use to stop the interval using clearTimeout(interval_id).</span>
+  <br><br>
+  <h4>Displaying date and time using setinterval function</h4>
+  <p class="code">
+    function displayTime(){ <br>
+      &emsp;&emsp;&emsp;time = new Date(); <br>
+      &emsp;&emsp;&emsp;console.log(time);
+    <br> }
+    <br>
+    setInterval(displayTime, 1000);
+  </p>
+  <script>
+    
+  </script>
+</body>
+</html>

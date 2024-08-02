@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btns{
+            display: block;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button class="btns">first button</button>
+    <button class="btns"> Second Button <strong>Hello <strong>World !</strong></strong></button>
+    <button class="btns">third Button</button>
+    <script>
+
+
+        // currentTarget :- always refers to the element with which the event handler is attached to 
+        // target :- identifies the specific element where the event is occured
+
+
+        
+        const btns = document.querySelectorAll(".btns")
+        btns.forEach(function(btn){
+            btn.addEventListener("click", function(event){
+                console.log(`Specific Target\n`)
+                console.log(event.target);
+                console.log(`Button Target`)
+                console.log(event.currentTarget);
+                    
+                event.target.style.color = "lightgreen";
+            })
+        })
+    </script>
+</body>
+</html>

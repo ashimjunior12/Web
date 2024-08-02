@@ -1,0 +1,34 @@
+useCallBack is a higher order function, that takes two arguments. 
+1) callback function
+2) dependency array
+
+When to use useCallBack function:-
+Let's say we have two functions in parent component. These two functions are completely independent to each other. Whenever one function is called the entire component gets rendered but we don't want this to happen. So, in this case we can wrap the function with the useCallBack hook and provide the necessary dependency array.
+
+
+```javascript
+import React, { useCallback } from 'react';
+
+const ParentComponent = () => {
+  
+  const functionA = useCallback(() => {
+    // Function A logic
+  }, []);
+
+  const functionB = useCallback(() => {
+    // Function B logic
+  }, []);
+
+  return (
+    <div>
+      {/* JSX content */}
+    </div>
+  );
+};
+
+export default ParentComponent;
+```
+
+In this example, both `functionA` and `functionB` are wrapped with the `useCallback` hook. The second argument, which is an empty dependency array (`[]`), indicates that these functions don't depend on any values from the component's state or props. This means that the functions will be memoized and only re-created if the dependencies listed in the array change.
+
+By using `useCallback`, we ensure that even if one function is called, it won't trigger the re-creation of the other function unnecessarily, thus optimizing the performance of your component.

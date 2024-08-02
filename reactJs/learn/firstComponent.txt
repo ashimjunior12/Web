@@ -1,0 +1,50 @@
+In order to create a component in React, essentially we need to create a funciton.
+
+But there are some differences between a vanilla JS function and react component.
+
+Component can also be created using arrow function.
+
+Some basic rules while writing React Components:- 
+- Components starts with a capital letter.
+- The function must return a JSX (html).
+- Always close the tag (<Greeting/>)
+
+-------------------------------------------------------------------------------------------------------
+
+function Greeting(){
+	return <h2>My first Component</h2>
+}
+
+// Arrow Function also does the job.
+
+const Greeting = () =>{
+	return <h2>My first Component</h2>
+}
+
+-------------------------------------------------------------------------------------------------------
+
+
+After writing the component, we have to export it. Otherwise we will not be able to use that component.
+The way to export is simple.
+
+export default Greeting;	
+
+After exporting we can grab the component anywhere in our application and we can render it on a screen.
+
+We can have thousands and thousands of component but we should at least have a component and that is the root component and we inject all of it to the root id. 
+
+-------------------------------------------------------------------------------------------------------
+
+Since react is a JS library under the hood we are using JS.
+
+return React.createElement('h2', {}, 'hello world');
+
+In order to make things easier, we use JSX below in return statement.
+
+return <h2>My first Component</h2>
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+

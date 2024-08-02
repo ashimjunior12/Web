@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+        .nav{
+            text-align: center;
+            padding: 10px;
+            color: rgb(45, 49, 48);
+            background-color: antiquewhite;
+        }
+        .content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;          
+        }
+        .content .para{
+            font-size: 25px;
+        }
+        .btn{
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: 550;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            border: 2px solid black;
+            transition: all 0.3s;
+           
+        }
+        .btn:active{
+            scale: 0.9;
+        }
+        .color-message{
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+
+        }
+        .color-message .para{
+            font-weight: 600;
+            font-size: 30px;
+
+        }
+        .color-message .para .color-code{
+            display: block;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <nav>
+            <h1>
+                Color Flipper 
+            </h1>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="color-message">
+            <p class="para">Your current color: <span class="color-code"></span> </p>
+        </div> 
+        <button class="btn hero-btn">Click Me</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

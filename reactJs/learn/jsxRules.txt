@@ -1,0 +1,144 @@
+
+-----------------------------------------JSX RULES----------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+1) We always have to return a single element(One Parent Element).
+EG:-
+
+-------------------------------------------------------------------------------------------------------
+
+function Greeting(){
+	return (
+		<div>
+			<h2>Hello world</h2>
+			<ul>
+				<li><a href="#">Click Me</a></li>
+			</ul>
+		</div>
+	)
+}
+
+This works fine because we are returning a single element, div(i.e parent element). 
+But what if we want another heading right after the div tag
+
+
+-------------------------------------------------------------------------------------------------------
+
+function Greeting(){
+	return (
+		<div>
+			<h2>Hello world</h2>
+			<ul>
+				<li><a href="#">Click Me</a></li>
+			</ul>
+		</div>
+		<h3> Hello There!</h3>
+	)
+}
+
+
+-------------------------------------------------------------------------------------------------------
+
+This will throw an error because we can only return a single element.
+
+
+So, what's the solution for this?? We can use fragments. Fragments allows us to group elements without 
+adding the extra nodes.
+We have two ways to do that:- 
+
+
+return <React.Fragment> ...rest of the return </React.Fragment>
+
+//shorthand:-
+
+return <> ...rest of the return </>
+
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+
+2) Camelcase Property Naming Convention:-
+
+-------------------------------------------------------------------------------------------------------
+
+return (
+  <div tabIndex={1}>
+    <button onClick={myFunction}>click me</button>
+    <label htmlFor='name'>Name</label>
+    <input readOnly={true} id='name' />
+  </div>
+)
+
+
+// in html
+
+
+<div tabindex="1">
+    <button onclick="myFunction()">click me</button>
+    <label for='name'>Name</label>
+    <input readonly id='name' />
+</div>
+
+-------------------------------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+3) We use className instead of class while returning JSX 
+
+EG:-
+
+function Greeting(){
+	return (
+		<div className="some-value">
+			<h2>Hello world</h2>
+			<ul>
+				<li><a href="#">Click Me</a></li>
+			</ul>
+		</div>
+	)
+}
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+
+4) We have to close every element in React.
+
+There are some tags that aren't closed in html (<img>, <input>). However, in React we have to close 
+every tags
+
+i.e. <img ..... />, <input .............. />
+
+If the tags are not closed we will get error.
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+5) Formating.
+
+Formating is as simple as it sounds. If we have a single line in return statement, we can still omit
+(). However in case of multiple lines after return statement, we have to use (). Otherwise we will,
+most probably get an error or the elements won't load.
+
+------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

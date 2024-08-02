@@ -1,0 +1,103 @@
+**A Comprehensive Guide to useReducer Hook in React**
+
+React's `useReducer` hook is a powerful tool for managing state in functional components. Unlike `useState`, which is generally suitable for managing simpler state, `useReducer` is more appropriate for managing complex state logic. In this guide, we'll explore the fundamentals of `useReducer` along with conventions and best practices.
+
+### 1. Importing `useReducer`
+
+First, let's import `useReducer` from React:
+
+```javascript
+import { useReducer } from 'react';
+```
+
+### 2. Initial State and Reducer Function
+
+When using `useReducer`, you need to define an initial state and a reducer function.
+
+```javascript
+const defaultState = {
+  people: [],
+  isLoading: false
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'CLEAR_LIST':
+      return { ...state, people: [] };
+    case 'RESET_LIST':
+      return defaultState;
+    default:
+      throw new Error(`Unhandled action type: ${action.type}`);
+  }
+};
+```
+
+### 3. Using `useReducer`
+
+Now, let's utilize `useReducer` to manage state:
+
+```javascript
+const [state, dispatch] = useReducer(reducer, defaultState);
+```
+
+### 4. Dispatching Actions
+
+To update the state, you dispatch actions. Actions are objects that describe the type of state change you want to perform.
+
+```javascript
+const clearList = () => {
+  dispatch({ type: 'CLEAR_LIST' });
+};
+```
+
+### 5. Reducer Function
+
+The reducer function takes the current state and the dispatched action as arguments. It then returns the new state based on the action type.
+
+### Conventions and Best Practices:
+
+#### Action Types as Constants:
+
+Define action types as constants to avoid typos and ensure consistency.
+
+```javascript
+const CLEAR_LIST = 'CLEAR_LIST';
+const RESET_LIST = 'RESET_LIST';
+```
+
+#### Action Creators:
+
+Create functions to generate action objects. This enhances code readability and testability.
+
+```javascript
+const clearList = () => ({
+  type: CLEAR_LIST
+});
+```
+
+#### Handling Unknown Actions:
+
+Throw an error in the reducer for unhandled action types to catch potential bugs early.
+
+```javascript
+default:
+  throw new Error(`Unhandled action type: ${action.type}`);
+```
+
+#### Using `switch` Statement:
+
+While `if-else` statements are also valid, `switch` statements are often more readable for handling multiple action types.
+
+#### Immutable Updates:
+
+Always return a new state object from the reducer to maintain immutability.
+
+```javascript
+return { ...state, people: [] };
+```
+
+### Summary:
+
+`useReducer` provides a structured approach to state management in React functional components. By following conventions and best practices, you can write cleaner, more maintainable code. Remember to define initial state, create a reducer function, dispatch actions, and handle them appropriately within the reducer. Utilize constants for action types, action creators for generating actions, and ensure immutability when updating state.
+
+With this guide, you're equipped to leverage the full potential of `useReducer` in your React applications. Happy coding!

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hover{
+            background-color: black;
+            color: white;
+            font-size: 25px;
+        }
+        .primary{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p class="para" style="background-color: green; color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est repudiandae commodi fugit officia dolorum illum. Deleniti inventore doloribus similique ullam!</p>
+    <p class="primary hover">You just hover here</p>
+    <button class="btn" style="cursor: pointer;">Click Me</button>
+
+    <script>
+        const para = document.querySelector(".para");
+        const btn = document.querySelector(".btn");
+        const primary = document.querySelector(".primary");
+
+
+        // click :- fires after full action is completed
+        // mouseup :- fires after the mouse is released
+        // mousedown :- fires after the mouse is pressed
+        // mouseenter :- moved into an element
+        // mouseleave :- moved out from an element
+
+
+        // whenever the mouse enters into the elements then we can add some functionality over the intended element.
+        // such as hover effect
+        para.addEventListener("mouseenter", function(){
+            para.style.display = "none"
+            primary.style.display = "block"
+        })
+        // whenever the mouse gets out from the elements then we can add some functionality over the intended element.
+        // such as hover effect
+        para.addEventListener("mouseleave", function(){
+            para.style.display = "block"
+            primary.style.display = "none"
+        })
+        
+
+        
+        btn.addEventListener("click", function(){
+            console.log("clicked")
+        })
+        btn.addEventListener("mousedown", function(){
+            console.log("You just pressed the mouse button")
+        })
+        btn.addEventListener("mouseup", function(){
+            console.log("You just released the mouse button")
+        })
+        
+
+    </script>
+</body>
+</html>

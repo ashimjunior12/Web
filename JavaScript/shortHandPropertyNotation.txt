@@ -1,0 +1,44 @@
+Short-hand property notation:- 
+
+Let's say we have the follwing object:- 
+
+===========================================================
+let message = {
+	greet: '',
+	user: '',
+}
+
+
+function greetUser(greet='hello', user='world'){
+	
+	message.greet = greet;
+	message.user = user;
+	return message;	
+}
+
+console.log(greetUser())
+
+// Output {greet:'hello', user:'ram'}
+==========================================================
+
+In above code we are updating the value of the greet and user property using the object name followed by a dot (.) notation. Now, to make this readable what we can do is use short-hand property notation.
+In short-hand property notation, if the variable name matches property of the object we can omit the reduandant part. Let's achieve the above goal using the short-hand property notation.
+
+=============================================================
+
+let message = {
+	greet: '',
+	user: '',
+}
+
+
+function greetUser(greet='hello', user='world'){
+	
+	message = {greet,user};
+	return message;
+	
+}
+
+console.log(greetUser())
+// Output {greet:'hello', user:'ram'}
+===========================================================

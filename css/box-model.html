@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box model</title>
+    <style>
+        .container{
+            border: 2px solid rgb(70, 36, 49);
+            /* Padding can be set like below */
+            padding: 10px 2px 20px 13px;
+            /* padding: y(top/bottom) x(left/right) */
+            /* Same goes with margin */
+            border-radius: 2px;
+            border-width: 5px;
+            width: 500px ;
+            margin: 6px;
+            color: white;
+            box-sizing: border-box;
+            /* box-sizing: border-box; width gets adjusted.. */
+            background-color: darkblue;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>This is a simple heading</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="container">
+        <h4>This is a simple heading</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="container">
+        <h4>This is a simple heading</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="container">
+        <h4>This is a simple heading</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+</body>
+</html>

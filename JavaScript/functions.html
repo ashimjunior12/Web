@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <style>
+        body{
+            width: 90%;
+            margin: 0 auto;
+            margin-bottom: 10%;
+        }
+        *{
+            font-size: 17px;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            font-size: 26px;
+        }
+        .code{
+            width: 100%;
+            background-color: black;
+            color: white;
+            font-size: 15px;
+            font-style: italic;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Functions</h1>
+    <b>Why Functions:-</b> 
+    <ol>
+        <li>Functions allow to reuse code.</li>
+        <li>Same code can be used multiple times</li>
+        
+    </ol>
+    <b>JavaScript Function Syntax:-</b> <br>
+    Function in javascript are declared using <em>function</em> keyword followed by function name. After function name we use () parenthesis. Inside of it, there can be parameters or it can be empty.
+    <p class="code">
+        function function_name(parameter1, parameter2){
+            <br>&emsp;&emsp;&emsp;&emsp;//block of code
+        <br>}
+    </p>
+    <b>Function Invocation:-</b>
+    <br>A function performs a certain task when it is invoked or called.
+    <br><br>
+    <b>Function Return:-</b>
+    After using a function we expect the function to produce something. This is done using return statement. By using return statement, we are telling the function to give us something(output). The code written after return statement is not executed.
+
+    <p class="code">
+        function sum(a, b){<br>
+            &emsp;&emsp;&emsp;return a+b; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//returns the sum of two numbers and provides to add variable
+           <br> &emsp;&emsp;&emsp;console.log("Hello") &emsp;&emsp;&emsp;&emsp;//This will not execute
+       <br> } <br>
+       let add = sum(2,3);  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//By "sum(2,3)", we are calling/invoking function.
+       <br> console.log(`Sum: ${add}`);
+       <br><br>
+       <b>Output:-</b> Sum: 5
+
+
+
+    </p>
+    <b>Parameters:- </b> <br>
+    Parameters are the variables that are passed inside a function.
+    In above code, (a,b) are parameters. <br><br>
+    <b>Arguments:-</b> <br>
+    Arguments are the data which are passed into the method's parameter. In above code, (2,3) are arguments.
+    <br><br>
+    <b>Default Parameter Values</b>
+    <p class="code">
+        function sum(a, b=10){<br>
+            &emsp;&emsp;&emsp;return a+b;
+        <br>} <br>
+        console.log(`Sum: sum(5)`); <br><br>
+        <b>Output:- </b> Sum: 15
+    </p>
+    In above code, if the value of b is not passed or is undefined, then it takes 10(default value).
+
+</body>
+</html>

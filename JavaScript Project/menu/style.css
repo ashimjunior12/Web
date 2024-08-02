@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500&family=Noto+Sans&family=Open+Sans:wght@300;400&family=Oswald:wght@300;400&family=Poppins:wght@100;200;300;600;700;900&family=REM:wght@300&family=Roboto&family=Signika+Negative:wght@300;400&family=Source+Sans+3:wght@200;300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+}
+
+:root{
+    --color: rgb(83, 83, 83);
+    --spacing: 0.2rem;
+}
+
+.photo{
+    height: 250px;
+    border: 4px solid salmon;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.menu{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.underline{
+    width: 50%;
+    background-color: salmon;
+    height: 0.3rem;
+    margin: 0 auto;
+}
+
+.title{
+    margin: 40px;
+}
+
+.title h2{
+    letter-spacing: var(--spacing);
+    font-size: 25px;
+    color: var(--color);
+}
+
+.section-center{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 8rem;
+}
+
+.menu-item{
+    display: grid;
+    gap: 0.6rem;
+    width: 25rem;
+}
+
+.menu-item header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid salmon;
+}
+
+.menu-item header h4{
+    letter-spacing: var(--spacing);
+}
+
+.price{
+    color: saddlebrown;
+    font-weight: 550;
+}
+
+.text-info{
+    color: var(--color);
+}
+
+
+.btn-container{
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn{
+    padding: 3px 10px;
+    border: 1px solid saddlebrown;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 4px;
+    background-color: green;
+    font-weight: 550;
+    font-size: 14px;
+    letter-spacing: 0.1rem;
+    transition: all 0.3s;
+}
+
+.filter-btn:active{
+    scale: 0.9;
+}
+
+.filter-btn:hover{
+    background-color: rgb(67, 112, 67);
+}
+
+@media(max-width:760px){
+    .section-center{
+        grid-template-columns: 1fr;
+    }
+}
+

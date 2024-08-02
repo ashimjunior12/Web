@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <ul class="list-items">
+            <li><a class="link" href="#">link</a></li>
+            <li><a class="link" href="#">link</a></li>
+            <li><a class="link" href="#">link</a></li>
+        </ul>
+    </div>
+    <script>
+        const container = document.querySelector(".container")
+        const list = document.querySelector(".list-items")
+
+        function showBubbling(event){
+            console.log('current target', event.currentTarget);
+            console.log('target', event.target);
+            // if (event.target.classList.contains("link")){
+            //     console.log("You clicked link")
+            // }
+        }
+
+        function stopPropagation(e){
+            e.stopPropagation();
+            console.log("you clicked on list");
+        }
+
+
+        // Basically we travel from the current element to the parent element
+        // But {capture:true}, we travel from (window object) to the current element
+
+        // .stopPropagation() stops the propagation
+
+        list.addEventListener("click", showBubbling, {capture:true})
+        window.addEventListener("click", showBubbling, {capture:true})
+        document.addEventListener("click", showBubbling, {capture:true})
+        container.addEventListener("click", showBubbling, {capture:true})
+        
+    </script>
+</body>
+</html>
+
+
+<!-- 
+    CLet's explain `.stopPropagation()` in simple terms with an example:
+
+**Imagine a Family Tree:**
+
+Think of your web page elements like a family tree. Each element can be like a family member, and when something happens (like a click), it's like passing a message within the family.
+
+**Example Scenario:**
+
+Suppose you have a button inside a box. When you click the button, something should happen, but you don't want the box to react to the click as well.
+
+```html
+<div class="box">
+    <button id="myButton">Click Me</button>
+</div>
+```
+
+**Normal Event Flow:**
+
+By default, when you click the button, the click event travels from the button to the div (the box) and then upwards to the document and window. This is like telling everyone in the family what happened.
+
+**Using `.stopPropagation()`:**
+
+Now, if you don't want the box to know about the click on the button, you can use `.stopPropagation()` like this:
+
+```javascript
+document.querySelector("#myButton").addEventListener("click", function(event) {
+    event.stopPropagation(); // Stop the click message from going further
+    // Do something when the button is clicked
+});
+```
+
+With this code, when you click the button, the event will stop at the button. It won't tell the box, the document, or the window about it. It's like keeping a secret within the button's own family.
+
+**Why It's Useful:**
+
+- It's like saying, "Hey, event, don't go further up the family tree!"
+- Useful when you have many nested elements, and you only want a specific one to react to an event.
+- Helps you control who should know about a particular event, just like keeping a secret within a group of people.
+
+Remember, use `.stopPropagation()` wisely. It's handy, but using it too much can make your code harder to understand. Sometimes, it's better to let the event travel up the family tree as usual.
+ -->

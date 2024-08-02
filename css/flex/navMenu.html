@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        nav ul{
+            display: flex;
+            list-style-type: none;  
+            margin: 0px;   
+            padding: 0px;    
+        }
+        nav li{
+            flex: 1 1 0;
+            padding: 10px;
+            margin: 0px auto;
+            text-align: center;
+            /* cursor: pointer; */
+        }
+        nav li:hover{
+            flex: 1 1 0;
+            padding: 10px;
+            cursor: pointer;
+            background-color: rgb(41, 73, 41);
+        }
+        nav li a{
+            text-decoration: none;
+            color: white;
+        }
+        nav{
+            display: flex;
+            margin: 0px 0px;
+            padding: 0px;
+            justify-content: space-between;
+            background-color: rgb(71, 56, 32);
+        }
+        a.fb{            
+            background: url(fb.png) no-repeat center;
+            width: 40px;
+            height: 40px;
+            background-size: 80%;
+        }
+        a.twitter{            
+            background: url(twitter.png) no-repeat center;
+            width: 40px;
+            height: 40px;
+            background-size: 80%;
+        }
+        .social a{
+            display: block;
+            text-indent: -10000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="conatiner">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Kits</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <ul class="social">
+                <li><a href="https://fb.com" target="_blank" class="fb">Facebook</a></li>
+                <li><a href="https://twitter.com" target="_blank" class="twitter">Twitter</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

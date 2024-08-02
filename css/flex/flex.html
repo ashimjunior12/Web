@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+
+        .flex-container {
+
+            height: 100px;
+            width: 1200px;
+            background-color: white;
+            display: flex;
+            flex-wrap: wrap;
+            /* flex-basis: 120px; */
+
+            /* When we use flex-basis, the flex items will have an initial width of 120px. If their content exceeds this width, the content may overflow, and the scrollbar will appear to allow scrolling within each flex item. */
+
+            /* When the combined width of flex items exceeds the width of the flex container, the overflowing items are wrapped to the next line due to flex-wrap: wrap. */
+
+            /* If flex-wrap: wrap-reverse is set, then the flex items are wrapped in the reverse order, starting from the bottom and moving upwards. */
+        }
+
+        /* Flex items stack left to right (default behavior) */
+        .box {
+
+            flex: 1; /* Recommended */
+             
+            /* flex-growth: 1;, flex-shrink: 1; flex-basis: 0; */
+
+            flex: 1 2 120px;
+            /* 
+                1-> flex-growth
+                2-> flex-shrink
+                120-> flex-basis
+                 */
+            
+            /* shorthand notation for flex-grow, flex-shrink and flex-basis */
+
+            border: 2px solid white;
+            height: 100px;
+            /* width: 700px; */
+            /* As we shrink below 600px a scroll is appeard while using width(width of each boxes) */
+            flex-basis: 700px;
+            /* flex-basis helps define the initial size of flex items, but the final size and layout of flex items are influenced by other Flexbox properties and the available space in the flex container.*/
+            flex-grow: 1;
+            /* We use flex-grow:number(growth rate); to expand elements in available space */
+        }
+
+        .box-one {
+            background-color: blue;
+        }
+
+        .box-two {
+            background-color: red;
+            /* flex-grow: 2; */
+            /* flex-shrink: 2; */
+        }
+
+        /* we use flex-shrink:number(rate); to shrink the element as the web browser gets smaller and it is rarely used*/
+        .box-three {
+            background-color: green;
+            /* flex-grow: 1; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="box box-one"></div>
+        <div class="box box-two"></div>
+        <div class="box box-three"></div>
+    </div>
+    </div>
+</body>
+
+</html>

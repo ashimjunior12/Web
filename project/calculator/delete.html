@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 25px;
+        color: rgb(255, 255, 255);
+        text-shadow: 10px 10px 15px rgb(0, 0, 0)
+    }
+
+    .top {
+        text-align: center;
+
+    }
+
+    .color-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        flex-direction: column;
+    }
+</style>
+
+<body>
+    <div class="top">
+        <div class="title">
+            Color Flipper
+        </div>
+        <div class="header">
+            Hex Color Changer
+        </div>
+    </div>
+
+    <div class="color-content">
+        <button id="btn"
+            style="display: block;cursor: pointer;color: white; background-color: blue;border: none;padding: 10px;outline: none;">
+            Click Me
+        </button>
+        Your current color is
+        <span id="color-content" style="text-align: center; display: block;">
+        </span>
+    </div>
+
+    <script>
+        const btn = document.getElementById("btn");
+        
+        btn.addEventListener("click", function () {
+            const color_code = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "A", "B", "C", "D", "E", "F"];
+            let hex = "#";
+            function color_change() {
+                for (let i = 0; i < 6; i++) {
+                    hex += color_code[random_number()];
+                }
+                document.body.style.backgroundColor = hex;
+                colorContent = document.getElementById("color-content").innerHTML = hex;
+            }
+            function random_number() {
+                random = Math.floor(Math.random() * color_code.length);
+                return random;
+            }
+            color_change();
+        })
+    </script>
+</body>
+
+</html>

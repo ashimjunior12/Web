@@ -1,0 +1,42 @@
+Ternary Operator:- 
+
+condition ? expression_1 : expression_2
+
+
+If condition is true, we will get the first expression and if it is false, we will get the second one.
+
+Example:-
+
+======================================================================================================
+
+const [isEditing, setIsEditing] = useState(false)
+
+<button>{isEditing?"Click":"add"}</button>
+
+======================================================================================================
+
+
+In above example, since isEditing is set to false, we will get "add" text in the button, if it was set to true then we would have got "Click".
+
+
+
+
+
+We can use ternary operator to render a block of elements as well.
+
+======================================================================================================
+
+const [user, setUser] = useState({name:"roman"});
+
+return (
+<div>
+	(user ? <div> <h2> Hello {user.name} </h2> </div> : <div> <p> please login </p> </div>
+	
+</div>
+)
+
+======================================================================================================
+
+
+Since we have user, we will get "Hello roman" as the output.
+If the user was null, then we would have got " please login".

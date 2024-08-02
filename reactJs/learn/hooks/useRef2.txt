@@ -1,0 +1,64 @@
+useRef:- 
+
+=======================================================================================================
+
+import {useState,useRef} from 'react';
+
+function MyComponent(){
+	const [count,setCount] = useState(0);
+	
+	
+	useEffect(()=>{
+		console.log('component re-rendered');
+	})
+		
+	const handleClick = () =>{
+		setCount(count++);	
+	}
+	
+	return (
+	<button onClick={handleClick}>click here</button>
+	)
+}
+
+export default MyComponent;
+
+ 
+======================================================================================================
+ 
+In above example we are not passing the dependency array with the useEffect hook, we will run the code everytime MyComponent component renders. This means in initial render as well as every time we click the click here button we will get the 'component re-rendered' in the console.
+
+
+======================================================================================================
+
+import {useState,useRef} from 'react';
+
+function MyComponent(){
+	const ref = useRef(0);
+	
+	
+	useEffect(()=>{
+		console.log('component re-rendered');
+	})
+		
+	const handleClick = () =>{
+		ref.current++;	
+		console.log(ref.current);
+	}
+	
+	return (
+	<button onClick={handleClick}>click here</button>
+	)
+}
+
+export default MyComponent;
+
+=======================================================================================================
+
+In this case we will only get the 'component re-rendered only once. Every time we clicked the button, we will update the value of ref but we will not log the 'component re-renderd' every time we clicked the button.
+
+=======================================================================================================
+
+useRef is often used while selecting DOM-nodes.
+
+

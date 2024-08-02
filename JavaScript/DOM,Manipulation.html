@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating DOM</title>
+    <style>
+        body {
+            width: 90%;
+            margin: 0 auto;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        * {
+            font-size: 17px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 30px;
+            text-decoration: underline;
+        }
+
+        .code {
+            width: 100%;
+            background-color: black;
+            color: white;
+            font-size: 15px;
+            font-style: italic;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>How to manipulate the DOM</h1>
+    <b>DOM</b>:- DOM stands for Document Model Object. It can be understood as a tree of nodes which has its own methods
+    and properties. Image below shows how a DOM tree looks like. <br><br>
+    <img src="../JavaScript/DOM.png" alt="image">
+    Here we have document object. To perform any form of DOM manipulation, first we have to access the document object.
+    Every elements in HTML document is represented as an object. <br><br>
+    After the document, we have <em>html</em> root element, which is the child element of document object. <br><br>
+    Next we have <em>head</em> and <em>body</em> which are children of <em>html</em> element and are siblings of each
+    other. <br><br>
+    Under head element, we have <em>title</em> which is a child of <em>head</em> element and parent to text node - "My
+    Title". <br><br>
+    Similarly, we have <em>a</em> & <em>h1</em> element which are children of <em>body</em> element and parent to next
+    text nodes.
+    <br><br><br>
+    <h3>4 major ways of selecting DOM elements</h3>
+    <ol>
+        <li>
+            <b>Using getElementById() method</b> <br><br>
+            Since id's are unique, it is easier to grab the element using this method.
+            <p class="code">
+                &lt;p id="para"> This is a paragraph &lt;/p&gt;
+                <br>&lt;script&gt;
+                <br>&emsp;&emsp;const para = document.getElementById("para");
+                <br>&emsp;&emsp;console.log(para); &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//&lt;p id="para">
+                This is a paragraph &lt;/p&gt;
+
+                <br>&lt;/script&gt;
+            </p>
+            Id is case sensative, para and Para are totally different things.
+
+        </li> <br>
+        <li>
+            <b>Using getElementsByClassName()</b> <br>
+            Since mulitple elements can have same class name, this method returs a collection of all matching elements.
+            <p class="code">
+                &lt;p class="content"&gt; This is a paragraph&lt;/p&gt; <br>
+                &lt;p class="content"&gt; This is another paragraph&lt;/p&gt; <br>
+                &lt;h1 class="content"&gt;Hello world&lt;/h1&gt; <br>
+                <br>
+                &lt;script&gt; <br>
+                &emsp;&emsp;&emsp;const content = document.getElementsByClassName("content")[2]; <br>
+                &emsp;&emsp;&emsp;console.log(content); &emsp;&emsp;&emsp;&emsp;&emsp;//&lt;h1 class="content"&gt;Hello
+                world&lt/h1&gt;;
+                <br>
+                &lt;/script&gt; <br>
+
+            </p>
+        </li> <br>
+        <li>
+            <b>Using getElementsByTagName()</b> <br>
+            Similar to the above method, this also returns the collection of matching HTML elements.
+            <p class="code">
+                &lt;p class="content"&gt; This is a paragraph&lt;/p&gt;<br>
+                &lt;p class="content"&gt; This is another paragraph&lt;/p&gt;<br>
+                &lt;p class="content"&gt; This is a third paragraph&lt;/p&gt;<br>
+                <br>
+                &lt;script&gt;<br>
+                &emsp;&emsp;&emsp;&emsp;const content = document.getElementsByTagName("p");<br>
+                &emsp;&emsp;&emsp;&emsp;console.log(content[1]); &emsp;&emsp;&emsp;&emsp;//&lt;p class="content"&gt;
+                This is another paragraph&lt;/p&gt;
+                <br>
+                &lt;/script&gt;
+
+            </p>
+        </li><br>
+        <li>
+            <b>Using .querySelector()</b> <br>
+            This method returs the first match from the CSS selector assigned to it.
+            <p class="code">
+                &lt;p class="content"&gt; This is a paragraph&lt;/p&gt;<br>
+                &lt;p class="content"&gt; This is another paragraph&lt;/p&gt;<br>
+                &lt;p class="content"&gt; This is a third paragraph&lt;/p&gt;<br><br>
+
+                &lt;script&gt;<br>
+                &emsp;&emsp;&emsp;&emsp;const content = document.querySelector(".content");<br>
+                &emsp;&emsp;&emsp;&emsp;console.log(content); &emsp;&emsp;&emsp;&emsp;&emsp;//&lt;p class="content"&gt; This is a paragraph&lt;/p&gt;
+                <br>
+                &lt;/script&gt;<br>
+
+            </p>
+            To select all the matching elements, we use another method. i.e. <br>
+            <br><b>.querySelectorAll()</b> <br>
+            This method returns collection of all the matching elements(usually a node list) from the HTML document.
+            <p class="code">
+                &lt;p class="content"&gt; This is a paragraph&lt;/p&gt;<br>
+                &lt;p class="content"&gt; This is another paragraph&lt;/p&gt;<br>
+                &lt;p class="content"&gt; This is a third paragraph&lt;/p&gt;<br><br>
+
+                &lt;script&gt;<br>
+                &emsp;&emsp;&emsp;&emsp;const content = document.querySelectorAll(".content")[0];<br>
+                &emsp;&emsp;&emsp;&emsp;console.log(content); &emsp;&emsp;&emsp;&emsp;&emsp;//&lt;p class="content"&gt; This is a paragraph&lt;/p&gt;
+                <br>
+                &lt;/script&gt;<br>
+
+            </p>
+        </li>
+    </ol> <br>
+    <h3>Traverse over the Document</h3>
+    We can use the following ways to traverse over various elements.
+    <ul>
+        <li>parentNode</li>
+        <li>childrenNodes</li>
+        <li>firstElementChild</li>
+        <li>lastElementChild</li>
+        <li>previousElementSibling</li>
+        <li>nextElementSibling</li>
+    </ul>
+    .children():- returns a collection of all the child elements from its parent element. <br><br>
+    .firstElementChild():- returns the first child element from its parent element. <br><br>
+    .lastElementChild():- returns the last child element from its parent element. <br><br>
+    .previousElementSibling():- returns the previous sibling element with respect to the selected element. <br><br>
+    .nextElementSibling():- returns the next sibling element with respect to the selected element. <br><br>
+    .parent():- returns the parent element of the selected element.
+
+    <br><br><br>
+    <h4>
+        Inserting HTML element
+    </h4> 
+    .createElement('element_name') is used to create a new HTML element.
+    <br><br>
+    .innerHTML() property is used to add some text nodes insed of it. <br><br>
+    parentElement.appendChild() method is used to append the newly created HTML element at the very last. <br><br>
+    .insertBefore(newNode, existingNode):- is used to insert the newly created HTML element before the desire element. <br>
+    parentElement.insertBefore(newNode, existingNode); <br><br>
+    .removeChild() is used to remove the child element from its parent element. <br><br>
+    .replaceChild(newNode, existingNode) is used to replace elements from parent element. <br><br>
+    .classList.add('class_name') method is used to add class and add some styling in the desired element. <br><br>
+    .classList.remove('class_name') method is used to remove class from desired element. <br><br>
+    .classList.toggle('class_name'):- <br>
+    If it has the class and you click the button, it REMOVES it. If it doesn't have the class and you click the button, it ADDS it.
+
+    <br><br>
+    .addEventListener():- This method listens events happening in HTML. This method takes 3 arguments. <br>
+    First one is event:- "click", "mouseover", "mouseout", etc... <br>
+    Second is:- function that is to be executed while event occurs. <br>
+    Last is:- boolean value(optional)
+
+</html>

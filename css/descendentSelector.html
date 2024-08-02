@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descendent Selector</title>
+    <style>
+        ul >li  {
+            color: blue; 
+            /* child selector */
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>first item</li>
+        <li>second item</li>
+        <li>third item</li>
+        <ul>
+            <li>unordered list</li>
+            <li>2nd unordered item</li>
+            <ol>
+                <li>ol list</li>
+            </ol>
+        </ul>
+        <li>fourth item</li>
+    </ol>
+</body>
+</html>

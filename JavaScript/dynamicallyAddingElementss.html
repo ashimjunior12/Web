@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .colors{
+            background-color: aqua;
+            color: rgb(26, 26, 26);
+        }
+        .text{
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p>Hello world</p>
+    <script>
+        const heading = document.createElement("h1");
+        // .createElement("element_name") - used to create an element
+        const body = document.querySelector("body")
+        const text = document.createTextNode("Inserted using JS");
+        // .createTextNode("text content") is used to add some text node(content)
+        heading.appendChild(text);
+        heading.classList.add("colors");
+        body.appendChild(heading)
+        console.log(heading);
+    </script>
+</body>
+</html>

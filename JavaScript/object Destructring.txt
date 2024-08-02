@@ -1,0 +1,26 @@
+const description = {
+    name: "john",
+    job: "developer",
+    country: "USA",
+    age: 25,
+    parents: {
+        father: "donald",
+        mother: "lisa"
+    }
+}
+
+
+function getInfo({name, country, parents:{father,mother}}){
+    // const {name, country} = user;
+    console.log(name)
+    console.log(country)
+    console.log(father)
+    console.log(mother)
+    
+}
+getInfo(description)
+
+
+// Instead of typing the boring dots and all the stuff what we can do is the object destructring. 
+
+// So basically what we do is is assign the properties which we want to the object name and we can destructre the object in a more simplier way.

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var,let and const</title>
+    <style>
+        body{
+            margin: 0 auto;
+            width: 95%;
+        }
+
+        *{
+            font-size: 16px;
+        }
+        h1{
+            font-size: 30px;
+            text-align: center;
+            text-decoration: underline;
+        }
+        .code{
+            padding: 10px;
+            border: 1px solid black;
+            font-style: italic;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <h1>var, let and const</h1>
+    <ol>
+        <li><b>var:-</b> <br>
+            var is globally scoped or function/locally scoped. It's value can be accessed from everywhere. <br>But when it is declared within a function, it's value can only be accessed within that function.
+            <p class="code">
+                var string = "this is a string"; <br>//It's value can be accessed and updated from anywhere.
+            </p>
+            <p class="code">
+                var string = "hello";  <br>
+                function newFunction() {<br>
+                    &emsp;&emsp;&emsp;&emsp;&emsp; var hello = "hello"; <br>
+                } <br>
+                console.log(hello); &emsp;&emsp; error: hello is not defined.
+            </p>
+            var can be re-declared and updated. <br>
+            <p class="code">
+                var string = "this is a string"; <br>
+                string = "this is another one" &emsp;&emsp;&emsp;//value of string gets updated
+                <br>var string = "this is a new string" &emsp;//string can be re-declared, which alredy existed
+            </p>
+            var variables are hoisted to the top of their scope and initialized with a value of undefined.
+            <p class="code">
+                console.log(name); <br>
+                var name = "My name is ram";
+            </p>
+            is interpreted as:-
+            <p class="code">
+                var name; <br>
+                console.log(name); <br>
+                var name = "My name is ram";<br>
+                console.log(name); &emsp;&emsp;&emsp;&emsp;&emsp;//undefined
+
+            </p>
+            Problem with var:- 
+            <p class="code">
+                var name = "my name is ram";
+                <br>var times = 3; <br>
+                if(times &lt; 4){<br>
+                    &emsp;&emsp;&emsp;&emsp;var name = "my name is hari";
+               <br> } <br>
+               console.log(name); &emsp;//"my name is hari" <br>
+            <br>
+            if(true){ <br>
+                console.log(name); &emsp; //my name is hari <br>
+            }
+            </p>
+            With the above code, the problem is, whenever we want the name, value of name is updated as "my name is hari", everywhere.
+        </li>
+        <br><br>
+        <li>
+        <b>let:- </b><br>
+            let is block scoped. Its value can be accessed within its block only.
+            <p class="code">
+                let name = "my name is ram";
+                <br>if(true){
+                    <br>&emsp;&emsp;let greet = "hello";<br>
+                }
+                <br>console.log(greet); &emsp;&emsp;//greet is not defined.            </p>
+                let can be updated but can't be redeclared(within its scope).
+                <p class="code">
+                    let name = "my name is ram";
+                    <br>name = "my name is hari"; &emsp;&emsp;//value of name is updated
+                    <br>console.log(name);&emsp;&emsp;&emsp;&emsp;//my name is hari
+                </p>
+                <p class="code">
+                    let name = "my name is ram";<br>
+                    let name = "my name is hari";<br>
+                    console.log(name); &emsp;&emsp;//error cause name has already been declared
+                </p>
+                but same varibale can be defined in different scopes
+                <p class="code">
+                    let name = "my name is ram";
+                    <br>
+                    if(true){ <br>
+                        &emsp;&emsp;&emsp;let name = "my name is hari"; <br>
+                        &emsp;&emsp;&emsp;console.log(name) &emsp;&emsp;//my name is hari
+                    <br>
+                    } <br>
+                    console.log(name); &emsp;&emsp;//my name is ram
+                </p>
+                <b>Hoisting of let:- <br></b>
+                let are hoisted at top, however let keyword is not initialized.
+                <p class="code">
+                    console.log(greeting); &emsp;&emsp;&emsp;//Refrence Error<br> 
+                    greetng = "hello";
+                </p>
+        </li>
+        <li>
+            <b>const:- </b><br>
+            variable declared with const keyword maintain constant value throughout the entire program. <br>
+            const are block scoped.
+            <br><br>
+            const can neither be updated nor be re-declared.
+            <p class="code">
+                const greeting = "hello"; <br>
+                greeting = "hi" &emsp;&emsp;&emsp;&emsp;//greeting cannot be updated
+            </p>
+            <p class="code">
+                const greeting = "hello";
+                <br>
+                const greeting = "hi"&emsp;&emsp;&emsp;&emsp;// greeting cannot be re-delcared.
+            </p>
+            properties of const object can be updated.
+            <p class="code">
+                const greeting{
+                    <br>
+                    &emsp;&emsp;&emsp;&emsp;
+                    message = "hello"; <br>
+                    &emsp;&emsp;&emsp;&emsp;
+                    times = 4;
+                    <br>
+                }
+            </p>
+            we can do:- 
+            <p class="code">
+                greeting.message = "say hi"; &emsp;&emsp;//This will update the value message of greeting.
+            </p>
+            <b>Hoisting of const:- </b> <br>
+            Just like var and let, const is hoisted at the top but its value is not initialized.
+        </li>
+    </ol>
+</body>
+</html>

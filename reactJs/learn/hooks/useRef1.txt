@@ -1,0 +1,55 @@
+useRef Hook
+
+It's similar to useState. It preserves the value between the renders. Updating the useRef doesn't trigger the re-render. 
+
+Very often useRef are used to access the DOM nodes.
+
+
+Way to import useRef is:- 
+
+==================================================================================
+import { useRef } from 'react';
+
+const refContainer = useRef(null);
+console.log(refContainer);
+ 
+==================================================================================
+
+If we log the refContainer, we will get an object with a current property. In this case the current property holds the null value.
+
+=================================================================================
+
+There are two ways how we can set the value of usRef. 
+
+- one method is using some kind of functionality.
+
+- another is using the DOM nodes.
+
+We can get the input using the useRef hook similar to the controlled input and form-data.
+
+- TO do this first find the element(mostly inputs) and use the `ref` attribute and pass in the useRef value (in above case refContainer). 
+
+==================================================================================
+
+import useEffect from 'react';
+
+const refContainer = useRef(null);
+
+
+const handleSubmit = (e) =>{
+	e.preventDefault();
+	const name = refContainer.current.value;
+	console.log(name);
+}
+
+
+return (<form onSubmit={handleSubmit}>
+	<input type='text' ref={refContainer} />
+	<button type='submit> submit </button>
+</form>
+
+======================================================================================
+
+In above code whatever the user entered in the input field we will get that value.
+
+

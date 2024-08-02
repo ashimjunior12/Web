@@ -1,0 +1,39 @@
+In order to solve the problem of prop drilling we useContext API. 
+
+First thing to do is importing the createContext. 
+
+import { createContext } from 'react';
+
+After importing it we will invoke it in parent component.
+
+It will return two things.
+- Provider Component,
+- Consumer Component.
+
+We have useContext hook, we don't require the Consumer. However, we will use the Provider.
+
+Since, we will export the values in the children component, we will export the createContext and use it in the child component.
+
+Eg:-
+
+export const NavbarContext = createContext();
+
+console.log(NavbarContext);
+
+What we will get is Provider and Consumer Component. Since we will be using useContext in the child component, we will only use the Provider. Now what we will do is we will wrap the return in the Provider. Provider has the value prop. And whatever we pass in the value we will have the access to the value in anywhere in the tree. 
+
+<Navbar.Provider value={{some value}}>
+return <h1>hello</hello>
+<Navbar.Provider>
+
+And now we will navigate to the component where we will use the value.
+
+Now to use the value we will import useContext hook and the NavbarContext. We will pass the NavbarContext inside of the useContext hook. 
+
+import {useContext} from 'react';
+import NavbarContext from './Navbar';
+
+const UserContainer = () =>{
+	const value = useContext(NavbarContext);
+	
+}

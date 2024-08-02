@@ -1,0 +1,11 @@
+useTransition hook allows us to specity some state updates as not as important. These state updates will be executed in parallel with other state updates, but the rendering of the component will not wait for these less important state udpates.
+
+Syntax:- 
+
+import {useTransition} from 'react';
+
+const [isPending, setTransition] = useTransition();
+
+isPending:- returns a boolean. This variable is true when slow state update is running and false when it is finished running.
+
+startTransition:- This takes a single callback function and contains all the code related to the slow update includin the setting of the state.

@@ -1,0 +1,23 @@
+**Global Axios Instance Setup:**
+- The global Axios instance allows for setting default configurations that apply to all requests made with Axios throughout the application.
+- One example is setting default request headers using `axios.defaults.headers`.
+- The advantage is that these defaults are automatically applied to every request without explicitly specifying them each time.
+- However, there are potential downsides, such as headers being sent with requests that don't need them or exposing sensitive information.
+
+**Custom Axios Instance Setup:**
+- A custom Axios instance is created to provide more control over specific requests.
+- This involves creating a new Axios instance with `axios.create()` and configuring it with specific options like `baseURL` and custom headers.
+- The advantage is that these configurations only apply to requests made with the custom instance, offering more granular control.
+
+**Interceptors:**
+- Interceptors are functions that Axios calls for every request and response, allowing for transformations or custom logic.
+- Request interceptors can modify the outgoing request, such as adding headers, while response interceptors can handle the response data or errors.
+- Interceptors are set up using `axios.interceptors.request.use()` and `axios.interceptors.response.use()`.
+- They can be applied to both global and custom instances, providing flexibility in request and response handling.
+
+**Conclusion:**
+- Understanding how to set up global and custom Axios instances, along with utilizing interceptors, is crucial for effective HTTP request handling in applications.
+- Global instances provide default configurations for all requests, while custom instances offer more specific control.
+- Interceptors allow for additional logic or transformations to be applied uniformly across requests and responses.
+
+This note summarizes key concepts discussed in the transcript, providing insights into managing HTTP requests with Axios effectively.

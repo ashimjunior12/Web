@@ -1,0 +1,100 @@
+import { useEffect } from "react";
+import { useState } from "react";
+
+const CleanupFunction = () => {
+
+  const [name,setName]=useState(null);
+
+  const handleClick = () =>{
+    setName("roman");
+  }
+  const handleClickSecond = () =>{
+    setName(null);
+  }
+
+
+  return (
+    <div>
+      {name ? (
+        <div>
+          <h2>Hello {name}</h2>
+          <button className='btn' onClick={handleClickSecond}>
+            click here
+          </button>
+          <DisplayMessage name={name}/>
+
+        </div>
+      ) : (
+        <>
+          <h2>hello world</h2>
+          <button className='btn' onClick={handleClick}>
+            click here
+          </button>
+        </>
+      )}
+    </div>
+  );
+};
+
+  const DisplayMessage = ({ name }) => {
+
+    useEffect(()=>{
+      // console.log('hello')
+
+      const intId = setInterval(()=>{
+        console.log('hello there');
+      },1000)
+
+      return () =>{
+        clearInterval(intId)
+      }
+    },[])
+    return (<div className='alert alert-success'>hello {name}, welcome</div>);
+
+  };
+  
+
+
+
+export default CleanupFunction;
+
+
+
+ ============================================================================================
+ 
+ 
+ In the above code, we have setInterval function which logs "hello" after every one seconds. Remember we can only return a function from useEffect hook. 
+ 
+ ==============================================================================================
+ 
+ useEffect(()=>{
+      // console.log('hello')
+
+     setInterval(()=>{
+        console.log('hello there');
+      },1000)
+
+      
+      }
+    },[])
+    
+    
+================================================================================================
+
+If we had done this we would have logged hello there every time the more we clicked the button the more faster we logged. Imagine we had some sort of subscription functionality, in that case we might encounter some bugs. So, to overcome the issue we use the above cleanup function.    
+    
+=================================================================================================
+
+
+useEffect(()=>{
+      // console.log('hello')
+
+      const intId = setInterval(()=>{
+        console.log('hello there');
+      },1000)
+
+      return () =>{
+        clearInterval(intId)
+      }
+    },[])
+

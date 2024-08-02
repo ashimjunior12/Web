@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>id and class</title>
+    <style>
+        .redBg{
+            color: red;
+            font-size: 25px; 
+        }
+        #para{
+            color: blue;
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>This is id and class</h3>
+
+    <!-- Only one ID selector can be attached to an element, Multiple Class selectors can be attached to an element, ID is unique and can only apply to at most one elemnt, Class can be applied to multiple elements so it could be multiple times a single page, # is used for IDs and . is used for classes -->
+
+
+    <span class="redBg">This is a class for red color</span>
+    <p class="redBg">This is class for red color</p>
+    <span id="para"> This is unique id</span><br>
+
+    <!-- You can use span#{id_name} to create span tag with id as shortcut if there is emmet in
+    in the code editor -->
+    <span id="name">Id for name</span><br>
+
+    <!-- You can use span.{class_name} to create a span tag with class as shortcut-->
+    <!-- also you can use span.{class_name1}.{class_name2} to give multiple class name for the 
+    same element -->
+
+    <span class="blue">Class for blue bg</span>
+
+</body>
+</html>

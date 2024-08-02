@@ -1,0 +1,38 @@
+Axios:- 
+
+axios returns promise.
+response data is located in data property.
+error is located in response property.
+
+fetch treats network errors as the only error but when it comes to axios it treats every errors as the errors.
+
+Headers in axios:-
+To supply headers in axios, we use second argument (for get() method) whereas the third argument (for post() method).
+
+axios.get(url, {})
+
+axios.post(url,{data}, {})
+
+Example:-
+const fetchDadJoke = async () => {
+  try {
+    const { data } = await axios(url, {
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+    // console.log(data);
+    setJoke(data.joke);
+  } catch (error) {
+    console.log(error.response);
+  }
+};
+
+Why to use headers??
+ The header specifies the format in which the client is willing to recieve the response from the server. In the above code, it indicates that the client expects the response to be in the JSON format.
+ Supplying the Accept: 'application/json' header is typically done to inform the server about the preferred content type for the response. By specifying this header, the client communicates to the server that it wants the response data in JSON format. This can be particularly useful when the server is capable of providing data in multiple formats (e.g., JSON, XML), and the client specifically wants JSON data.
+
+In the context of the code provided, the assumption is that the server endpoint being accessed returns data in JSON format. By including the Accept: 'application/json' header, the client ensures that it receives the data in the desired format.
+
+However, it's important to note that in many cases, if the server is designed to respond with JSON by default and there are no specific requirements for content negotiation, supplying the Accept: 'application/json' header may not be strictly necessary, as the server would likely respond with JSON regardless.
+

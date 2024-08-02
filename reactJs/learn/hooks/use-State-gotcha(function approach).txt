@@ -1,0 +1,42 @@
+const [value, setValue] = useState(0);
+  const handleClick = () =>{
+    setTimeout(()=>{
+      console.log("clicked the button")
+      setValue(value+1)
+    }, 3000)
+  }
+  return (
+    <div>
+      <h2>{value}</h2>
+      <button className="btn" onClick={handleClick}>Increase</button>
+    </div>
+  );
+  
+  
+Let's assume that we want to update the value of "value" the number of times we clicked the button under 3 seconds and we use the above approach but what will happen is no matter how many times we clicked the button under 3 seconds we will update the value of "value" by "value+1". In above case 1. But that's not what we want.
+
+Suppose if we clicked the button for 5 times under 3 seconds then we want to update the value to 5. So, what can be the solution for this. We can use the function approach where we pass the currentValue as a parameter and update the value.
+
+
+const [value, setValue] = useState(0);
+  const handleClick = () =>{
+    setTimeout(()=>{
+      console.log("clicked the button")
+      setValue((currentValue)=>{
+        return currentValue+1;
+      })
+    }, 3000)
+  }
+  return (
+    <div>
+      <h2>{value}</h2>
+      <button className="btn" onClick={handleClick}>Increase</button>
+    </div>
+  );
+};
+
+This will work the way we expected.
+
+
+
+By using the function approach with the currentValue parameter, you ensure that you are updating the state based on the current value at the time the update is applied. This prevents the issue of only incrementing by 1 regardless of how many times the button was clicked within the 3-second timeout.

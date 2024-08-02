@@ -1,0 +1,56 @@
+Dynamic object keys:-
+
+So in JavaScript we can access the properties of an object using both dot notation and the bracket notation. Let's say we have an user object.
+
+const user = {
+	name: '',
+	profession:'',
+	id:'1',
+}
+
+Using dot notation to access the property of the user object is quite straightforward.
+
+console.log(user.id);
+
+// output:- 1
+
+
+Now let's take a look how we can achieve the same goal using the bracket notation.
+
+console.log(user['id']);
+
+// output:- 1
+
+What we are doing is, passing the property name inside the brackets.
+
+Both notations achieve the same result. However, bracket notaion is more flexible when it comes to dynamically accessing the properties. Let's take an example.
+
+Let's create a function that access the user properties, updates the properties and also adds the properties that are not in the user object.
+
+
+function handleUser(value, updateValue){
+	
+	user[value] = updateValue;
+	
+}	
+
+handleUser('name', 'ram');
+handleUser('profession','teacher')
+handleUser('hobby','reading books');
+
+
+console.log(user);
+
+
+Output:-
+
+{
+	name: 'ram',
+	profession:'teacher',
+	id:'1',
+	hobby:'reading books'
+}
+
+If we take a look at the above output, we are updating the existing property(name,profession) and also we are adding the new property (hobby).
+
+So, to sum up in case of dynamically accessing the properties of an object bracket notation is more flexible.

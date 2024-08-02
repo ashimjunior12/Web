@@ -1,0 +1,37 @@
+we can use multiple useEffect in a component.
+
+Let's take an example where we have two useEffect hooks. Inside the first hook, we are logging 'hello from first useEffect' while in the second we are logging 'hello from second useEffect' and as a second argument we are passing in an empty dependency array for now. Now, what we can do is inside the dependency array we can pass the first value as well as the second value. For example, if i pass first value inside the first useEffect hook, then we will be loggig 'hello from first useEffect' on every click on the first state. Similarly if we set secondValue to the empty useEffect in the dependency array, then after every click on the second button we will be logging "hello from first useEffect"
+
+-------------------------------------------------------------------------------------------------------
+
+import { useState, useEffect } from 'react';
+
+const MultipleEffects = () => {
+  const [value, setValue] = useState(0);
+  const [secondValue, setSecondValue] = useState(0);
+
+  useEffect(() => {
+    console.log('hello from first useEffect');
+  }, [secondValue]);
+
+  useEffect(() => {
+    console.log('hello from second useEffect');
+  }, []);
+  return (
+    <div>
+      <h1>value : {value}</h1>
+      <button className='btn' onClick={() => setValue(value + 1)}>
+        value
+      </button>
+      <h1>second value : {secondValue}</h1>
+      <button className='btn' onClick={() => setSecondValue(secondValue + 1)}>
+        second value
+      </button>
+    </div>
+  );
+};
+export default MultipleEffects;
+
+-------------------------------------------------------------------------------------------------------
+
+Notice in above code we are passing in secondValue in the dependency array in the first useEffect hook. What will this do is, on every click on the second button we will be logging the 'hello from first useEffect'.

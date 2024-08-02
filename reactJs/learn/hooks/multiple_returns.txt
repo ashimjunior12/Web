@@ -1,0 +1,36 @@
+while setting state values, a convention for booleans is :-
+
+const [isLoading, SetisLoading] = useState(true);
+
+is + variable_name;
+
+
+we can return multiple values from a function in react just like in vanilla js.
+
+---------------------------------------------------------------------------------------------------
+
+import { useEffect, useState } from 'react';
+
+const MultipleReturnsBasics = () => {
+
+  const [isLoading, isSetLoading] = useState(true);
+
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      isSetLoading(false);
+    },3000)
+  },[])
+
+  if(isLoading){
+    return <h2 className='loading'></h2>
+  }
+
+
+  return <h2>Multiple Returns Basics</h2>;
+};
+export default MultipleReturnsBasics;
+
+
+------------------------------------------------------------------------------------------------
+

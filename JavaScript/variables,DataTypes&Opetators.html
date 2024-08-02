@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables Data Types & Operators</title>
+    <style>
+        .code{
+            border: 1px solid black;
+            width: fit-content;
+            padding: 10px;   
+            font-style: italic;         
+        }
+    </style>
+</head>
+<body>
+    <div style="margin: 0 auto; width: 90%;">
+        <h1 style="text-align: center;">Variables, Data Types & Operators</h1> 
+        <p><b>var keyword</b>:- It is used to declare a variable in JavaScript. Example:- var a. In this case, we have created a variable named 'a' using var keyword.</p> <br>
+        <em>- Two types of operators in JavaScript:-</em>
+            <ol>
+                <li><b>Unary Operator</b>:- Has only one operand. Example, a=-1;, In this case - is operator and 1 is operand.</li> <br>
+                <li><b>Binary Operator</b>:- Has two operands. Example, a=1+2, a=b+c.</li>
+            </ol>
+        </p>
+        <p>
+           <em> - Some Arthmetic operators: </em>
+            <ol>
+                <li>
+                    <b>Exponentiation Operator</b>(**):- It is used to raise a number to a certain power. Example:- 'base ** exponent', ie, 2**3. In this case 2 is raised 3 times and the final output is 8.
+                </li> <br>
+                <li>
+                <b>Increment/Decrement Operator(++/--)</b>:- In JavaScript, the increment (++) and decrement (--) operators are used to increase or decrease the value of a variable by 1, respectively. Example:- <br><br>
+                <div class="code"> var num1=6; <br> num1++; <br> console.log(num1);</div> <br><br> The output is 7 cause the value of num1 is increased by 1. The value is decreased by 1 while using decrement operator. <br>
+                <br>
+                Now let's observe a slight difference between num1++ and ++num1. <br>
+                <br><br> <div class="code"> num1 = 6; <br>console.log(++num1); </div><br> <br> In this case, we will get the output as expected.i.e. 7. <br> However, in this case, <br><br> <div class="code"> num1=6;<br>console.log(num1++);</div><br><br> The output is 6. The reason is simple. First the number is printed (i.e, initial value,6) after that the number is increased by 1 and then, num1 is updated as num1=7;
+            </li>
+            </ol>
+        </p>
+        <p>
+            <em>-More on <b>Binary Operators:-</b></em>
+            <ol>
+                <li><b>Arithmetic Operators</b>:- Use to perform mathmetical operations. Example:- '+', '-', '/', '*', '%'.</li> <br>
+                <li><b>Assignment Operators</b>:- Assigns values from right side operands to the
+                    left side operand. <br><br> Example:- Addition Assignment (+=). <br><br> Addition Assignment adds the right operand to the left operand and assigns the value to the left operand.
+                    <br>
+                    <p class="code">
+                        var y = 10; <br> y += 3; &emsp;&emsp;&emsp;&emsp;//Now the value of y is 13.
+                    </p>
+                </li>
+                <li><p><b>Comparison Operators or Relational Operators</b>:- Used in programming to compare values and determine the relationship between them. These operators return a Boolean value (true or false) based on whether the comparison is true or false. 
+                <br><br>Example:-  < , >, <=, >=, ==, !=</p></li>
+                <li><b>Binary Logical Operators (&&, ||, !)</b></li>
+                <li><b>Binary Bitwise Operators (&, ^, |)</b></li>
+            </ol>
+            
+
+
+        </p>
+    </div>
+
+    <script>
+        console.log("Hello World!");
+
+        // var is a keyword used to declare variables.
+
+        var a = 10;
+        var b = 23;
+
+        var c= 2;
+        var d= 3;
+        // creates a global varibale if 'f' doesnot already exists.
+        f = 12;
+
+        var name = "RAM"
+        
+
+        // In 3 + 4, 3 & 4 are operands and + is a operator
+
+        // Two types of operator
+
+        // 1) Unary Operator -> Has only one operand 
+        // Example:- c = -12;, c=-c;
+
+        // Binary Operator -> Has two operands 
+        // Example:- c= a + b;, c=1+2;
+
+        console.log(name);
+
+
+        // Arthmetic Operators in JavaScript
+
+        console.log("Sum, a+b is "+(a+b));
+        console.log("Difference, a-b is "+ (a-b));
+        console.log("Product, axb is "+(a*b));
+        console.log("Quotient, a/b is "+(a/b));
+        console.log("Exponent, c^d is "+(c**d));
+        
+        console.log("Increased value of c is "+ (++c));
+        console.log("Increased value of c is "+ (c++));
+        console.log("Value of c after increment is "+ (c));
+
+        console.log("Decreased value of c is "+ (--c));
+        console.log("Decreased value of c is "+ (c--));
+        console.log("Value of c after decrement is "+ (c));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+---
+
+**React Components and Props:**
+
+1. **Introduction:**
+   - Props (short for properties) are a way to pass data to React components. (Similar to passing 
+   arguments to a function)
+   
+   - Components receive props as an object, providing a way to make them dynamic.
+
+
+-------------------------------------------------------------------------------------------------------
+  
+   <Book title="James Cleaar"/>
+   
+   const Book = (props){
+   	console.log(props)
+   }
+   
+   Output:-
+   	
+   	{title:"James Cleaar"}    // which is a JS object
+   
+
+-------------------------------------------------------------------------------------------------------
+
+
+2. **Basic Setup:**
+   - Components automatically receive a `props` object.
+   - We can access props values inside the component.
+
+3. **Passing Props:**
+   - Props can be passed when rendering a component in JSX.
+   - Example: `<Book job="Developer" title="Random Title" number={22} />`
+
+4. **Accessing Props:**
+   - Access props values inside the component using the `props` object.
+   - Example: `const { job, title, number } = props;`
+
+5. **Handling Missing Props:**
+   - If a prop is not provided, its value inside the component will be `undefined`.
+
+6. **Dynamic Rendering:**
+   - Utilize props to dynamically render components with varying data.
+   - Example: `<Book author="Author Name" title="Book Title" image="book.jpg" />`
+
+7. **Summary:**
+   - Components can receive and utilize props to create dynamic and reusable UI elements.
+   - Props provide a way to customize and modify the behavior of components.
+
+
+---
+
+
+
+
+
+
+We can only pass props down(i.e from parent to child)
+
+Alternatives for this can be Context API, redux, other state libraries
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Area</title>
+    <style>
+        #content > *{
+            background-color: rgba(0, 221, 221, 0.4);            
+            text-align: center;
+        }
+        #content{
+            display: grid;
+            grid-gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas:
+            "header header header header"
+            "nav nav main main"
+            "aside aside main main"
+            "section section section section"
+            "section section section section"
+            "footer footer footer footer"
+            ;
+            /* This is how our web page render things */
+        }
+        header{
+            grid-area: header;
+            /* defining grid-area name for header */
+            /* Name can be anything i.e grid-area: heading; */
+        }
+        main{
+            grid-area: main;
+        }
+        aside{
+            grid-area: aside;
+        }
+        nav{
+            grid-area: nav;
+        }
+        section{
+            grid-area: section;
+        }
+        footer{
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <header>Header</header>
+        <main>Main</main>
+        <aside>Aside</aside>
+        <nav>Nav</nav>
+        <section>Section</section>
+        <footer>Footer</footer>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+In CSS, descendant selectors are used to target elements that are descendants of a specific parent element. A descendant selector consists of a combination of two or more selectors, separated by a space, where the second selector represents the descendant element. This means that the second selector is a child, grandchild, or any subsequent descendant of the first selector.
+
+The basic syntax of a descendant selector is as follows:
+
+```css
+parent-selector descendant-selector {
+  /* CSS styles to be applied to the descendant element(s) */
+}
+```
+
+Here's an example to illustrate the usage of descendant selectors:
+
+HTML:
+```html
+<div class="parent">
+  <p>This is a paragraph inside the parent div.</p>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+</div>
+```
+
+CSS:
+```css
+.parent p {
+  color: blue;
+}
+
+.parent li {
+  color: green;
+}
+```
+
+In this example, we have a `<div>` element with the class "parent" that contains a `<p>` element and a `<ul>` with two `<li>` elements inside it.
+
+- The `parent p` selector targets all `<p>` elements that are descendants of an element with the class "parent". It will apply a blue color to the text inside those paragraphs.
+- The `parent li` selector targets all `<li>` elements that are descendants of an element with the class "parent". It will apply a green color to the text inside those list items.
+
+Both selectors are using descendant selectors to apply styles to elements that are descendants of the element with the class "parent".
+
+It's important to note that descendant selectors can lead to a specific rule applying to a large number of elements, which may affect performance. Therefore, it's a good practice to use them judiciously and keep the selector specificity in mind while writing CSS rules.

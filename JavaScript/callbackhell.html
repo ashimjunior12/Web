@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>CallBack Hell</h3>
+
+    <!-- red 1s -->
+    <!-- blue 5s -->
+    <!-- purple 3s -->
+    <!-- In sequence -->
+
+    
+    <p class="first">This will turn red</p>
+    <p class="second">This will turn blue</p>
+    <p class="third">This will turn purple</p>
+    <button class="btn">Click Here</button>
+    <script>
+        const first = document.querySelector('.first')
+        const second = document.querySelector(".second")
+        const third = document.querySelector(".third")
+        const btn = document.querySelector('.btn')
+
+        // btn.addEventListener("click", () => {
+        //     setTimeout(() => {
+        //         first.style.color = 'red'
+        //     }, 1000);
+        //     setTimeout(() => {
+        //         second.style.color = 'blue'
+        //     }, 5000);
+        //     setTimeout(() => {
+        //         third.style.color = 'purple'
+        //     }, 3000);
+        // })
+
+        // ------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // the above callback function turns first class to red after 1s
+        // after that the third class to putple after 3 s
+        // and the second class to blue after 5s
+        // But what if we want to change the style in sequence(i.e. first, second and third)
+        // In this case, we can use callback hell(nested callback stacked below one another forming a pyramid structure)
+        // Every callback depends/waits for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of the code.
+        // -----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+        btn.addEventListener("click", () => {
+            setTimeout(() => {
+                first.style.color = 'red'
+                setTimeout(() => {
+                    second.style.color = 'blue'
+                    setTimeout(() => {
+                        third.style.color = 'purple'
+                    }, 3000);
+                }, 5000);
+            }, 1000);
+
+
+        })
+
+        // callback hell makes our code difficult to manage and affects the readability of the code 
+        // we can use promises and async/await instead, which makes our code more readable and code can be managed easily
+
+
+    </script>
+</body>
+
+</html>

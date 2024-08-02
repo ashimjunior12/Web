@@ -1,0 +1,22 @@
+JavaScript Array.from()
+
+The from() method creates a new array from any array like or iterable object.
+Simply from those which has leghth property (string, array, object ...)
+
+Syntax:-
+	Array.from(arraylike, mapFunc, thisArg)
+	The from() method being static method, is called using the Array class name. If we use other name instead of Array then we will get undefined.
+	
+	
+	Example:- 
+	const string = 'hello';
+	console.log(Array.from(string));            //  ['h','e','l','l','o']
+	
+	We can iterate over each item from the new array useing the second parameter (mapFunction).
+	
+	Example:- 
+	const arr = [1,2,3];
+	const result = Array.from(arr, (num) => num+1);
+	console.log(result)          // [2,3,4]
+	
+	

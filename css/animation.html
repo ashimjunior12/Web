@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{            
+            background: lightblue;
+        }
+        .container{
+            margin-top: 30px;
+        }
+        .container1{
+            width: 100%;
+            height: 150px;
+            background: black;
+        }
+        .container2{
+            top: 200px;
+            width: 100%;
+            height: 150px;
+            background: black;
+        }
+        /* .box1 animation properties */
+.container .box1 {
+    width: 10px;
+    height: 150px;
+    background: white;
+    animation-name: box1;
+
+    /* Specifies the name of the keyframe animation to be used */
+
+    animation-duration: 3s;
+
+    /* Duration of the animation, in how many seconds we want the animation to complete */
+
+    animation-iteration-count: 2;
+
+    /* Number of times the animation should repeat */
+
+    animation-delay: 2s;
+
+    /* Delay before the animation starts, after how many seconds (time) we want our animation to begin */
+
+    animation-direction: alternate;
+
+    /* Direction of the animation (alternate means it will run in reverse on every other cycle) */
+
+    animation-fill-mode: backwards;
+
+    /* Animation fill mode set to 'backwards': the element retains the styles of the first keyframe (start state) while waiting for the animation to start */
+
+    animation-timing-function: ease-in-out;
+
+    /* Timing function for the animation, 'ease-in-out' provides a slow start, fast middle, and slow end effect */
+    /* 
+    ease-in -> slow and fast
+    ease-out -> fast and slow
+    */
+}
+
+/* .box2 animation properties */
+.container .box2 {
+    width: 10px;
+    height: 150px;
+    background: rgb(190, 121, 121);
+
+    /* animation: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-fill-mode; */
+    /* Shorthand to create animation */
+
+    animation: box1 6s ease-in-out 1s 2 forwards;
+    /* Applies the 'box1' animation to .box2 element with the specified animation properties */
+}
+
+       /* Keyframes for animation box1 */
+@keyframes box1 {
+    /* 'from' represents the initial state of the animation */
+    from {
+        width: 10px;
+    }
+    /* 'to' represents the final state of the animation */
+    to {
+        width: 100%;
+    }
+    /* 
+    The animation will start with a width of 10px and gradually increase to 100% width,
+    creating a smooth animation effect that expands the element horizontally.
+    */
+}
+
+/* Keyframes for animation box2 */
+@keyframes box2 {
+    /* 'from' represents the initial state of the animation */
+    from {
+        width: 0%;
+    }
+    /* 
+    'to' represents the final state of the animation.
+    Note: There's a typo here; 't0' should be corrected to 'to' to define the final state properly.
+    */
+    to {
+        width: 50%;
+    }
+    /* 
+    The animation will start with a width of 0% and gradually increase to 50% width,
+    creating a smooth animation effect that expands the element to half of its original width.
+    */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container1 container">
+        <div class="box1"></div>
+    </div>
+    <div class="container2 container">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

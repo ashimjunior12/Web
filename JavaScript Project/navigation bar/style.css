@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.flex{
+    display: flex;
+}
+
+.logo{
+    font-size: 24px;
+    letter-spacing: 0.1rem;
+}
+
+.navigation-bar{
+    background-color: #2f2f2f;
+    color: #fff;
+    height: 50px;
+    padding: 10px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.nav-menu{
+    gap: 40px;
+}
+
+.nav-menu li{
+    list-style-type: none;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+a::after{
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0%;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    margin: auto;
+}
+a:hover::after{
+    width: 100%;
+}
+
+.hamburger-menu{
+    display: none;
+}
+
+.ham{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media(max-width:760px){
+    .hamburger-menu{
+        display: block;
+    }
+
+    .nav-menu{
+        flex-direction: column;
+        background: #2f2f2f;
+        width: 100%;
+        position: fixed;
+        top: 45px;
+        padding: 10px;
+        right: -100%;
+        height: fit-content;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav-menu.active{
+        right: 0;
+    }
+    a:hover{
+        color: aqua;
+    }
+
+    a:hover::after{
+        width: 0%;
+    }
+}

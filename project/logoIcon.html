@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500&family=Noto+Sans&family=Poppins&family=Roboto&family=Signika+Negative&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Bodoni Moda', serif;
+            font-family: 'Noto Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-family: 'Signika Negative', sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: black;
+        }
+
+        header::before {
+            background: url(andras-vas-Bd7gNnWJBkU-unsplash.jpg) no-repeat center center/cover;
+            content: '';
+            height: 100vh;
+            width: 100%;
+            position: absolute;
+            z-index: -1;
+            opacity: 0.55;
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav .logo {
+            font-size: 30px;
+            font-weight: 560;
+            padding: 10px;
+            margin: 0px 10px;
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            padding: 20px 20px 10px 30px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        nav ul li:hover {
+            color: lightblue;
+            transform: scale(1.5);
+        }
+
+        nav ul li a .menu_logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        nav ul li a .menu_logo:hover {
+            color: lightblue;
+
+        }
+
+        #click {
+            display: none;
+        }
+
+        nav .search {
+            padding: 20px 20px 10px 30px;
+        }
+
+        nav .search .input {
+            border-radius: 10px;
+            width: 150px;
+            background: none;
+            text-align: center;
+            border-style: none;
+            border: 1px solid rgb(255, 251, 251);
+            color: white;
+        }
+
+        nav .search .search_icon {
+            border-left: 1px solid rgb(247, 243, 243);
+            position: relative;
+            top: 3px;
+            right: 22px;
+            cursor: pointer;
+            border-radius: 5px;
+            /* background-color: blue; */
+            color: white;
+
+
+        }
+
+        nav .hamburger-menu {
+            display: none;
+            margin: 5px;
+            padding: 10px 10px 10px 10px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        nav .close_btn {
+            display: none;
+            margin: 5px;
+            padding: 10px 10px 10px 10px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media(max-width:976px) {
+            header{
+            	background-size: cover;
+            	}
+            nav ul {
+                display: block;
+                position: fixed;
+                right: 0;
+                top: 50px;
+                background: #1f1f1f;
+                width: fit-content;
+                height: fit-content;
+                z-index: -1;
+                right: -100%;
+                transition: all 0.29s;
+            }
+
+            nav .mbl .hamburger-menu {
+                display: inline-block;
+
+            }
+
+            #click:checked~ul {
+                right: 0%;
+            }
+
+            #click:checked~.mbl .hamburger-menu {
+                display: none;
+            }
+
+            #click:checked~.mbl .close_btn {
+                display: block;
+            }
+
+            nav .search {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                ComNam
+            </div>
+            <input type="checkbox" name="" id="click">
+            <div class="mbl">
+                <label for="click">
+                    <ion-icon name="menu-outline" class="hamburger-menu"></ion-icon>
+                    <ion-icon name="close-outline" class="close_btn"></ion-icon>
+                </label>
+            </div>
+
+
+            <ul>
+                <li><a href="#">
+                        <span class="menu_logo home active">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                    </a></li>
+                <li><a href="#">
+                        <span class="menu_logo message">
+                            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                        </span>
+                    </a></li>
+                <li><a href="#">
+                        <span class="menu_logo friends">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                    </a></li>
+                <li><a href="#">
+                        <span class="menu_logo settings">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                    </a></li>
+            </ul>
+            <div class="search">
+                <input type="text" class="input" placeholder="Search Here">
+                <ion-icon name="search-outline" class="search_icon"></ion-icon>
+            </div>
+
+        </nav>
+    </header>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

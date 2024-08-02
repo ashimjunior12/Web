@@ -1,0 +1,21 @@
+Let's say we have two components Home and About. One way of structuring them is import those components in index.jsx file and export them and using them in the App.jsx file.
+
+
+
+======================================== index.jsx ====================================================
+
+import Home from './Home';
+import About from './About';
+
+export {Home,About}
+ 
+ =====================================================================================================
+
+
+
+======================================== App.jsx ======================================================
+
+import {Home,About} from './Pages'
+
+
+=======================================================================================================

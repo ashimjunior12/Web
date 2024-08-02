@@ -1,0 +1,26 @@
+JSX stands for JavaScript XML. It's a syntax extension for JavaScript often used with React to describe what the UI should look like. JSX allows you to write HTML elements and components in a syntax similar to XML or HTML within your JavaScript code. It provides a concise and readable way to define the structure of UI components.
+
+Here's a basic example of JSX:
+
+```jsx
+const element = <h1>Hello, JSX!</h1>;
+```
+
+In the example above, the `<h1>` tag is not a string but JSX syntax. JSX gets transpiled into JavaScript by tools like Babel before being run in the browser. The code above would be transformed into something like:
+
+```javascript
+const element = React.createElement('h1', null, 'Hello, JSX!');
+```
+
+React then takes care of rendering this virtual DOM representation to the actual DOM.
+
+JSX allows you to embed JavaScript expressions within curly braces `{}`. This allows you to dynamically generate content based on variables or execute functions. Here's an example:
+
+```jsx
+const name = "John";
+const element = <p>Hello, {name}!</p>;
+```
+
+When the above JSX is rendered, it would display "Hello, John!".
+
+JSX is a powerful and expressive syntax that helps make React code more readable and maintainable. It's important to note that while JSX is commonly associated with React, it's not limited to React and can be used with other JavaScript frameworks or libraries as well.

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testing</title>
+</head>
+<body>
+    <h2>This is a form testing</h2>
+    <form action="backend.php">
+        <div>
+            <label for="name">Username</label>
+            <input type="text" name="myName" id="name" placeholder="Enter your username">
+        </div>
+        <br>
+        <div>
+            <label for="pass">Password</label>
+            <input type="password" name="myPassword" id="pass" placeholder="Enter your password">
+        </div>
+        <br>
+        Gender: <input type="radio" name="gender">Male <input type="radio" name="gender">Female <input type="radio" name="gender">Other
+        <br>
+        <br>
+        <label for="check">Are you eligible?</label>
+        <input type="checkbox" selected id="check" checked>
+        <br>
+        <br>    
+        <label for="options">Which country do you belong?</label><br>
+        <select name="select" id="options">
+            <option value="nepal">Nepal</option>
+            <option value="nepal">India</option>
+            <option value="nepal" selected>Pakistan</option>
+            <option value="nepal">Bangladesh</option>
+            <option value="nepal">Bhutan</option>
+            <option value="nepal">Srilanka</option>
+        </select>
+        <br><br>
+        <label for="date">Enter your date of birth</label><br>
+        <input type="date" id="date">
+        <br>
+        <br>
+        <div>
+            <label for="textarea">Give us feedback</label><br>
+            <textarea name="area" id="textarea" cols="30" rows="10"></textarea>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Submit"><br>
+            <br>
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+</body>
+</html>

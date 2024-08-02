@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text{
+            font-size: 30px;
+            letter-spacing: 1rem;
+        }
+        .colors{
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p id="first-para" class="first">This is first para</p>
+    <p id="second-para" class="second">This is second para</p>
+    <p id="third-para" class="third">This is third para</p>
+    <script>
+        const firstPara = document.getElementById('first-para')
+        const secondPara = document.getElementById('second-para')
+        const thirdPara = document.getElementById('third-para')
+        
+        
+        firstPara.className = "colors"; // we can add class using className property
+        firstPara.className = "text";   // .className property overwrites the class insted of appending (Disadvantage)
+        
+        firstPara.className = "colors text hello" // however we can append two or more classes using this method
+        
+        console.log(firstPara.className); // gives us the name of the class
+
+        // Another method of adding class is, using classList property. It further takes another property i.e. add to add class
+        // Unlike className, it appends two or more classes instead of overwriting
+
+        // thirdPara.classList.add("colors"); 
+        // thirdPara.classList.add("text") // instead of overwritng it is appending the classes
+        
+        thirdPara.classList.add("colors", "text");
+        console.log(`Classes before removing:- ${thirdPara.className}`); 
+        // Instead of adding the classes in multiple line of codes, we can use this method to append the class.
+
+        // We can remove the class using .remove property
+        thirdPara.classList.remove("third");
+        console.log(`Classes after removing:- ${thirdPara.className}`);
+
+        // .classList has .contains property which checks whether the element has that class or not and returns a boolean value
+        console.log(thirdPara.classList.contains("text"));
+
+    </script>
+</body>
+</html>

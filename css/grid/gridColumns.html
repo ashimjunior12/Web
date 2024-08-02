@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Intro</title>
+    <style>
+.container {
+    /* Make the container take up to 90% of the available width */
+    max-width: 90%;
+
+    /* Make the container as tall as its content needs */
+    height: 100%;
+
+    /* Center the container horizontally on the page */
+    margin: 0 auto;
+
+    /* Turn the container into a grid for organizing elements */
+    display: grid;
+
+    /* Create three columns, each taking up 35% of the container's width */
+    grid-template-columns: 35% 35% 35%;
+
+    /* Create three columns with flexible widths */
+    grid-template-columns: 1fr 3fr 1fr;
+    /* 'fr' stands for fraction. In this case, the middle column takes up 3 times the width of the side columns, and they all share the remaining space equally. */
+
+    /* Create four columns, each with equal width */
+    grid-template-columns: repeat(4, 1fr);
+    /* Here, 'fr' again stands for fraction. Each of the four columns takes up an equal portion of the available space. */
+}
+
+        .container div{
+            background-color: blue;
+            height: 80px;
+            margin: 10px;
+        }
+        .container div:nth-child(even){
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+</body>
+</html>

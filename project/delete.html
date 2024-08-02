@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: black;
+        }
+        header::before{
+            background: url(backgroundimg.jpg) no-repeat center center/cover;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+        }
+        nav .logo{
+            width: 2em;
+            height: 2em;
+            padding: 0.5em 0.9em;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            /* background-color: black; */
+            height: 3em;
+            width: 100%;
+        }
+        nav ul{
+            display: flex;list-style-type: none;
+        }
+        nav ul li{
+            margin: 0.8em;
+            padding: 0.3em 0.5em;
+            
+        }
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 550;
+            transition: all 0.4s;
+        }
+        nav ul li a:hover{
+            background-color: white;
+            border-radius: 4px;
+            color: black;
+        }
+        section, .container{
+            border: 1px solid white;
+            width: 600px;
+            height: 550px;
+        }
+        section .container article{
+            color: white;
+            border: 1px solid red;
+            margin: 5px;
+        }
+        section .container{
+            display: flex;
+            box-sizing: border-box;
+            flex-wrap: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="fb.png" alt="logo" class="logo">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <article class="article article1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consectetur minima veritatis dolore eveniet quos reiciendis voluptatum iste suscipit. Reiciendis cum perferendis excepturi quia beatae quae dicta esse accusantium magnam.
+            </article>
+            <article class="article article2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consectetur minima veritatis dolore eveniet quos reiciendis voluptatum iste suscipit. Reiciendis cum perferendis excepturi quia beatae quae dicta esse accusantium magnam.
+            </article>
+            <article class="article article3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consectetur minima veritatis dolore eveniet quos reiciendis voluptatum iste suscipit. Reiciendis cum perferendis excepturi quia beatae quae dicta esse accusantium magnam.
+            </article>
+            <article class="article article4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consectetur minima veritatis dolore eveniet quos reiciendis voluptatum iste suscipit. Reiciendis cum perferendis excepturi quia beatae quae dicta esse accusantium magnam.
+            </article>
+        </div>
+    </section>
+</body>
+</html>

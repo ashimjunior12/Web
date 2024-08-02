@@ -1,0 +1,100 @@
+body {
+    font-family: 'Baloo Bhai', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: larger;
+}
+.top::before{
+    position: absolute;
+    background-image: url('backgroundimg.jpg') no-repeat center center/cover;
+   z-index:1;
+    content: "";
+}
+.top {
+    color: white;
+    /* border: 2px solid red; */
+}
+
+.top .left {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    /* border: 2px solid green; */
+}
+
+.top .left img {
+    width: 68px
+}
+.top .left .text{
+    text-align: center;
+}
+.top .mid {
+    display: block;
+    width: 500px;
+    margin: -13px auto;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    padding: 15px;
+    /* border: 2px solid green; */
+}
+.top .mid .list{
+    list-style: none;
+}
+.list li{
+    display: inline-block;
+}
+.list li a{
+    padding: 25px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.list li a:active, .list li a:hover{
+    color: rgb(207, 201, 228);
+    text-decoration: underline;
+    
+}
+
+.top .right {
+    display: inline-block;
+    position: absolute;
+    display: inline-block;
+    position: absolute;
+    top: 9px;
+    right: 17px;
+    margin: 2px 0px;
+}
+.btn{
+    color:white;
+    background-color: rgb(11, 163, 113);
+    border: none;
+    border-radius: 5px;
+}
+.btn:hover{
+    color:white;
+    background-color: rgb(12, 90, 64);
+    cursor: pointer;
+}
+
+.container {
+    color: white;
+    text-align: center  ;
+    border: 3px solid rgb(236, 226, 226);
+    text-shadow: 1px 1px 1px blue;
+    margin: 60px 170px;
+    padding: 0px 40px;
+    width: 344px;
+    border-radius: 3px;
+}
+
+.container .text{
+    display: block;
+    font-family: 'Baloo Bhai', cursive;
+    text-align: center;
+    border-radius: 10px;
+    margin: 10px 0px;
+    padding: 0px;
+    width: 0px;
+
+}

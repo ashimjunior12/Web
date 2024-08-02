@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Rows</title>
+    <style>
+        .container{
+            height: 100%;
+            width: 90%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            grid-auto-rows: 200px; 
+
+            /* Gives every single row a height of 200 px, ignoring the size of the content inside the row */
+            /* To fit the content inside the row, we can use minmax() function. */
+
+            grid-auto-rows: minmax(200px, auto);
+
+            /* Meaning if there is nothing in the row then the height will be 200 px, if some content is there then the content will fit in the row */
+
+            grid-template-rows: auto 100px  300px;
+
+            /* To create total no.of rows assining the height of each row */
+
+            grid-column-gap: 10px;
+
+            /* Creates gap between columns, while margin is used space is remained between left and right side */
+            /* While using grid-column-gap, gap only exists between columns */
+
+            grid-row-gap: 10px;
+
+            /* Creates gap between two rows. */
+
+            grid-gap: 20px;
+
+            /* Short-hand for grid-column-gap & grid-row-gap */
+            
+        
+        }
+        .container div{
+            background-color: aqua;
+        }
+        .container div:nth-child(even){
+            background-color:beige;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat harum quidem itaque fuga voluptatum velit vitae, enim laudantium dolores voluptas pariatur omnis obcaecati ab consequatur rem dolorum exercitationem totam impedit, dignissimos voluptates quasi ex sit et autem. Tempore culpa reprehenderit dolores earum illum blanditiis eos ea facere beatae soluta, Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, autem! rem saepe ipsa illo, labore, fugit corporis quaerat. Harum eum unde animi ipsa ipsum esse, assumenda neque voluptas, sequi laborum, commodi illo veritatis? Culpa debitis aut quasi! Tenetur esse dolorem quisquam.</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+useState is a function.
+
+We can use that function and we have to pass the default value(can be anything integer, string,object,array....)
+
+When we invoke it, we get an array with two elements (one is the default value which we pass and another is the function which controls the default value).
+
+Suppose:-
+
+useState(1);
+
+what we get is [1, f], f is the function which helps to change(control) 1(default value).
+
+We can access the elements inside of useState() however we want(using array slicing or any other array method) but array destructring is handy for doing the task.
+
+How we can do that??
+
+const [count,setCount] = useState(0) can be anything in default value.
+
+Now for the naming convention, whatever the variable name we set in the first we use set+variable_name as the second while destructing the array. Its just a convention.
+
+setCount will control the count.
+
+setCount(), inside the () we can pass whatever we like(string, integer) and the default value will change accordingly.
+
+ 
+ 
+ #### Initial Render and Re-Renders
+
+In a React application, the initial render is the first time that the component tree is rendered to the DOM. It happens when the application first loads, or when the root component is first rendered. This is also known as "mounting" the components.
+
+Re-renders, on the other hand, happen when the component's state or props change, and the component needs to be updated in the DOM to reflect these changes. React uses a virtual DOM to optimize the process of updating the actual DOM, so that only the necessary changes are made.
+
+There are a few ways that you can trigger a re-render in a React component:
+
+- By changing the component's state or props. When the component's state or props change, React will re-render the component to reflect these changes.
+
+- When the parent element re-renders, even if the component's state or props have not changed.
+
+
+
+
+
+setFunction is not going to be syncronohous

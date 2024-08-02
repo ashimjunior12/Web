@@ -1,0 +1,48 @@
+Two flavours while it comes to import and export
+- named one and default one
+
+
+
+We can use whichever we prefer
+
+Most probably if we have one component in a file we use default one and if we have multiples they will
+be named.
+
+
+When we import with the named one, we need to use the same name.
+
+And with the default one, we can come up with whatever value we want.
+
+
+Syntax for named import:- 
+
+----------------------------
+export.js
+export const name = "Hari";
+
+main.js
+import {name} from "./export"  
+
+----------------------------
+
+Syntax for default import:- 
+----------------------------
+export.js
+
+const name = "Ram";
+
+export default name;
+
+// we can only export a single default from the file.
+
+main.js
+
+import whatever_name_we_want from export.js
+
+Inside the code, we have to specify the name
+
+--------------------------------------------
+
+
+
+They help to organize our application

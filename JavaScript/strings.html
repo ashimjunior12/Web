@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+    <style>
+        .container{
+            width: 80%;
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+        }
+        .code{
+            border: 1px solid black;
+            font-style: italic;
+            padding: 10px;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Strings in JavaScript</h1>
+         
+            <p>Single quotes string:-</p>
+            <p class="code">
+                var name = 'ram'; &emsp;&emsp;&emsp;//we can use "" inside of it
+            </p>
+            <p>Double Quotes String:-</p>
+            <p class="code">
+                var name = "hari"; &emsp;&emsp;&emsp;//We can use single quotes inside of it
+            </p>
+            <p>
+                Escape Sequences:-
+            </p>
+            <p class="code">
+                var car_name = "tesla\naudi" &emsp;&emsp;&emsp;//audi is printed in next line
+            </p>
+            <p>
+                <b>String Concatenation</b>
+            </p>
+            <p class="code">
+                var name="ram"; <br>
+                var age = "18"; <br>
+                console.log(name + " is "+ age + " years old");
+                <br><br>
+                Output:- ram is 18 years old
+            </p>
+            <p>
+                One string makes everything string
+            </p>
+            <p class="code">
+                var a = "1"; &emsp;&emsp;&emsp;//a is a String <br>
+                var b = 2; &emsp;&emsp;&emsp; //b is a number <br>
+                console.log(a+b); <br><br>
+                Output:- 12, which is a string
+            </p>
+            <p>
+                Concatenation is only when we have + symbol
+                <p class="code">
+                    var a = "3"; &emsp;&emsp;&emsp;//string <br>
+                    var b = 2; &emsp;&emsp;&emsp;//integer <br>
+                    console.log(a*b); <br><br>
+                    Output:- 6, which is integer
+
+                </p>
+            </p>
+            <p>
+                Other ways to concatenate
+                <ol>
+                    <li>Using assignment operator:- 
+                        <p class="code">
+                            var names = "ram"; <br>
+                            names += "shyam"; <br>
+                            names+= "hari"; <br>
+                            console.log(names); <br><br>
+                            Output:- ramshyamhari
+                        </p>
+                    </li>
+                    <li>
+                        Using Built-in concat method:-
+                        <p class="code">
+                            var name = "".concat("hello", " world", "1"); <br>
+                            console.log(name); <br><br>
+                            Output:- hello, world!
+                        </p>
+                    </li>
+                    <li>
+                        Using backtick(``):-
+                        <p class="code">
+                            var name = "ram"; <br>
+                            var age = 18; <br>
+                            console.log(`${name} is ${age} years old.`); <br><br>
+                            Output:- ram is 18 years old.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+            <p>
+                Way of finding the length of String:-  <br><br>
+                .length method is used to determine the length of the string.
+                <p class="code">
+                    var name = "Ram"; <br>
+                    console.log(name.length);
+                    <br><br>
+                    Output:- 3
+                </p>
+            </p>
+        <br>
+        <div id="insert">
+
+        </div>
+    </div>
+
+    <script>
+        // Single Quote Strings
+
+        // We can use double quotes inside of it
+        var name = '"Ram"';
+        console.log(name);
+
+        // Double Quotes Strings
+
+        // We can use single quotes inside of it
+        var car_name = "Ram's car is Tesla."
+        console.log(car_name);
+
+        // Escape Sequences
+        // With backslash, we can escape the quote commands
+        var brother_name = "Ram's brother is \nShyam";
+        console.log(brother_name);
+
+        // With backslash, we can escape the esccape sequences as well
+        var sister_name = "Ram's sister is \\n Natasha"
+        console.log(sister_name);
+
+        // .length method is used to find the length of the string
+        var length = name.length;
+        console.log("length of name is "+ length);
+
+        // We can use backtick(``) to concatenate just like + symbol
+        // For this ${variable_name} -> (to get the data stored in variable) is used
+
+        var num1 = 16;
+        var num2 = 12;
+        var result = num1 + num2;
+        // One method of getting the output is  :-
+        console.log("The output of " + num1 + " + "+ num2 +" is "+ result);
+        
+        // Aother method of doing this is, by using backtick(``):- 
+        console.log(`The output of ${num1} + ${num2} is ${result}`);
+        // which is quite handy
+
+        // We can insert html using JavaScript(control)
+        document.getElementById('insert').innerHTML = 'Inserted using javascript'
+    </script>
+</body>
+</html>

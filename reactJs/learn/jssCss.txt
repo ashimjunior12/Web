@@ -1,0 +1,50 @@
+Title: Inline Styles in React JSX
+
+In React development, applying styles to components can be achieved through inline styles using JavaScript objects. This note provides a brief overview of the process along with a simple example.
+Overview:
+
+    Syntax:
+        Styles are applied using the style attribute in JSX.
+        The style attribute value is set to a JavaScript object enclosed in curly braces.
+
+    Example:
+
+    jsx
+
+    import React from 'react';
+
+    const InlineStylesExample = () => {
+      const inlineHeadingStyles = {
+        color: '#617DX9',
+        fontSize: '0.75rem',
+        marginTop: '0.5rem',
+      };
+
+      return (
+        <div>
+          <h4 style={inlineHeadingStyles}>Styled Heading 1</h4>
+          {/* Option 2: Define styles as a separate object and reference it */}
+          {/* <h4 style={inlineHeadingStyles}>Styled Heading 2</h4> */}
+        </div>
+      );
+    };
+
+    export default InlineStylesExample;
+
+Key Points:
+
+    Inline Styles:
+        Styles are applied directly to individual elements.
+        Use the style attribute and enclose a JavaScript object within curly braces.
+
+    JavaScript Object:
+        The object contains CSS properties as keys and their corresponding values as strings.
+
+    Separate Object Option:
+        Alternatively, styles can be defined in a separate JavaScript object outside the component and then referenced.
+
+    Gotcha:
+        Inline styles may override external CSS rules, so be cautious when combining both.
+
+    Best Practices:
+        While inline styles are demonstrated, it's generally recommended to use external stylesheets for larger projects.

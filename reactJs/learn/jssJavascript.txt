@@ -1,0 +1,23 @@
+{} means going back to JavaScript
+
+value inside {} must be expression (i.e that returns a value), rather than statements.
+
+Example :- 
+
+const name = "Danish"
+
+function Name(){
+	return <p>{name}</p>
+};
+
+we will get the desired output, but
+
+function Name(){
+	return <p>{let x=6}</p>
+}
+
+we will get an error.	
+
+So every time we want to go back to JS, we set up the curlies and start our logic inside of it.
+
+
